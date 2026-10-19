@@ -2,7 +2,7 @@
   "site_version": "1.0",
   "version_label": "Version 1",
   "build_date": "2026-10-19",
-  "base_url": "https://example.github.io/cinder-peaks-community-foundation/",
+  "base_url": "https://hufsa-stack.github.io/cinder-peaks-community-foundation/",
   "org": {
     "name": "Cinder Peaks Community Foundation",
     "short_name": "Cinder Peaks",
@@ -12,13 +12,30 @@
     "mission": "Cinder Peaks Community Foundation connects people who care with causes that matter, building lasting resources so that every community in northern Arizona can thrive for generations.",
     "vision": "A high country where every family has a stable home, a healthy start, meaningful work, and a voice in the decisions that shape their community.",
     "values": [
-      {"name": "Rooted in place", "text": "We listen first to the people who live and work in the communities we serve, from the Grand Canyon's rim to the White Mountains."},
-      {"name": "Equity in practice", "text": "We direct resources toward communities that have historically been left out of philanthropy, including tribal nations and rural towns."},
-      {"name": "Long-term stewardship", "text": "We manage charitable funds prudently so that today's generosity keeps working decades from now."},
-      {"name": "Trust and transparency", "text": "We publish our grantmaking, financial information, and decision processes so applicants and donors know how we work."}
+      {
+        "name": "Rooted in place",
+        "text": "We listen first to the people who live and work in the communities we serve, from the Grand Canyon's rim to the White Mountains."
+      },
+      {
+        "name": "Equity in practice",
+        "text": "We direct resources toward communities that have historically been left out of philanthropy, including tribal nations and rural towns."
+      },
+      {
+        "name": "Long-term stewardship",
+        "text": "We manage charitable funds prudently so that today's generosity keeps working decades from now."
+      },
+      {
+        "name": "Trust and transparency",
+        "text": "We publish our grantmaking, financial information, and decision processes so applicants and donors know how we work."
+      }
     ],
     "service_area_summary": "Coconino, Yavapai, Navajo, and Apache counties in northern Arizona",
-    "service_counties": ["Coconino County", "Yavapai County", "Navajo County", "Apache County"],
+    "service_counties": [
+      "Coconino County",
+      "Yavapai County",
+      "Navajo County",
+      "Apache County"
+    ],
     "state": "Arizona",
     "hq_city": "Flagstaff",
     "hq_county": "Coconino County"
@@ -48,47 +65,230 @@
     ]
   },
   "stats": [
-    {"value": "39", "label": "years serving northern Arizona"},
-    {"value": "$94M+", "label": "granted to community causes since 1987"},
-    {"value": "310", "label": "charitable funds under stewardship"},
-    {"value": "1,800+", "label": "nonprofits, schools, and tribal programs supported"}
+    {
+      "value": "39",
+      "label": "years serving northern Arizona"
+    },
+    {
+      "value": "$94M+",
+      "label": "granted to community causes since 1987"
+    },
+    {
+      "value": "310",
+      "label": "charitable funds under stewardship"
+    },
+    {
+      "value": "1,800+",
+      "label": "nonprofits, schools, and tribal programs supported"
+    }
   ],
   "staff": [
-    {"id": "rholloway", "name": "Renata Holloway", "title": "President & CEO", "email": "rholloway@cinderpeakscf.org", "ext": "101", "bio": "Renata has led the Foundation since 2018. She previously directed a rural health network serving the Verde Valley."},
-    {"id": "sokafor", "name": "Simone Okafor", "title": "Vice President, Philanthropy & Donor Relations", "email": "sokafor@cinderpeakscf.org", "ext": "109", "bio": "Simone works with fundholders, estate planners, and the Shared Giving Catalog."},
-    {"id": "mtsosie", "name": "Marcus Tsosie", "title": "Vice President, Grants & Community Impact", "email": "mtsosie@cinderpeakscf.org", "ext": "112", "bio": "Marcus oversees all competitive grantmaking and the Rapid Response & Resilience Fund."},
-    {"id": "ebrightwater", "name": "Elena Brightwater", "title": "Senior Program Officer, Health & Economic Opportunity", "email": "ebrightwater@cinderpeakscf.org", "ext": "115", "bio": "Elena manages the Spring Community Impact cycle and the Prism Fund."},
-    {"id": "jarviso", "name": "Joaquín Arviso", "title": "Program Officer, Education, Arts & Environment", "email": "jarviso@cinderpeakscf.org", "ext": "116", "bio": "Joaquín manages the Fall Community Impact cycle."},
-    {"id": "praman", "name": "Priya Raman-Locke", "title": "Program Officer, Early Childhood & Families", "email": "praman@cinderpeakscf.org", "ext": "118", "bio": "Priya leads the First Steps Infant & Toddler Fund and its community research."},
-    {"id": "tlindqvist", "name": "Theo Lindqvist", "title": "Grants Manager", "email": "tlindqvist@cinderpeakscf.org", "ext": "119", "bio": "Theo supports applicants with portal access, payments, and grant reporting."},
-    {"id": "dwhitehorse", "name": "Dana Whitehorse", "title": "Program Officer, Indigenous Communities", "email": "dwhitehorse@cinderpeakscf.org", "ext": "121", "bio": "Dana staffs the Plateau Indigenous Communities Fund and its advisory council."},
-    {"id": "wcastellano", "name": "Wren Castellano", "title": "Nonprofit Learning Coordinator", "email": "wcastellano@cinderpeakscf.org", "ext": "124", "bio": "Wren runs the Nonprofit Learning Hub and the Stronger Nonprofits Capacity Grants."},
-    {"id": "cabernathy", "name": "Corinne Abernathy, CPA", "title": "Chief Financial Officer", "email": "cabernathy@cinderpeakscf.org", "ext": "105", "bio": "Corinne oversees investments, audits, and fund accounting."},
-    {"id": "hpemberton", "name": "Hal Pemberton", "title": "Director of Communications", "email": "hpemberton@cinderpeakscf.org", "ext": "107", "bio": "Hal produces the annual and community impact reports."},
-    {"id": "mruelas", "name": "Maya Ruelas", "title": "Office & Operations Manager", "email": "mruelas@cinderpeakscf.org", "ext": "100", "bio": "Maya keeps the office running and welcomes every visitor."}
+    {
+      "id": "rholloway",
+      "name": "Renata Holloway",
+      "title": "President & CEO",
+      "email": "rholloway@cinderpeakscf.org",
+      "ext": "101",
+      "bio": "Renata has led the Foundation since 2018. She previously directed a rural health network serving the Verde Valley."
+    },
+    {
+      "id": "sokafor",
+      "name": "Simone Okafor",
+      "title": "Vice President, Philanthropy & Donor Relations",
+      "email": "sokafor@cinderpeakscf.org",
+      "ext": "109",
+      "bio": "Simone works with fundholders, estate planners, and the Shared Giving Catalog."
+    },
+    {
+      "id": "mtsosie",
+      "name": "Marcus Tsosie",
+      "title": "Vice President, Grants & Community Impact",
+      "email": "mtsosie@cinderpeakscf.org",
+      "ext": "112",
+      "bio": "Marcus oversees all competitive grantmaking and the Rapid Response & Resilience Fund."
+    },
+    {
+      "id": "ebrightwater",
+      "name": "Elena Brightwater",
+      "title": "Senior Program Officer, Health & Economic Opportunity",
+      "email": "ebrightwater@cinderpeakscf.org",
+      "ext": "115",
+      "bio": "Elena manages the Spring Community Impact cycle and the Prism Fund."
+    },
+    {
+      "id": "jarviso",
+      "name": "Joaquín Arviso",
+      "title": "Program Officer, Education, Arts & Environment",
+      "email": "jarviso@cinderpeakscf.org",
+      "ext": "116",
+      "bio": "Joaquín manages the Fall Community Impact cycle."
+    },
+    {
+      "id": "praman",
+      "name": "Priya Raman-Locke",
+      "title": "Program Officer, Early Childhood & Families",
+      "email": "praman@cinderpeakscf.org",
+      "ext": "118",
+      "bio": "Priya leads the First Steps Infant & Toddler Fund and its community research."
+    },
+    {
+      "id": "tlindqvist",
+      "name": "Theo Lindqvist",
+      "title": "Grants Manager",
+      "email": "tlindqvist@cinderpeakscf.org",
+      "ext": "119",
+      "bio": "Theo supports applicants with portal access, payments, and grant reporting."
+    },
+    {
+      "id": "dwhitehorse",
+      "name": "Dana Whitehorse",
+      "title": "Program Officer, Indigenous Communities",
+      "email": "dwhitehorse@cinderpeakscf.org",
+      "ext": "121",
+      "bio": "Dana staffs the Plateau Indigenous Communities Fund and its advisory council."
+    },
+    {
+      "id": "wcastellano",
+      "name": "Wren Castellano",
+      "title": "Nonprofit Learning Coordinator",
+      "email": "wcastellano@cinderpeakscf.org",
+      "ext": "124",
+      "bio": "Wren runs the Nonprofit Learning Hub and the Stronger Nonprofits Capacity Grants."
+    },
+    {
+      "id": "cabernathy",
+      "name": "Corinne Abernathy, CPA",
+      "title": "Chief Financial Officer",
+      "email": "cabernathy@cinderpeakscf.org",
+      "ext": "105",
+      "bio": "Corinne oversees investments, audits, and fund accounting."
+    },
+    {
+      "id": "hpemberton",
+      "name": "Hal Pemberton",
+      "title": "Director of Communications",
+      "email": "hpemberton@cinderpeakscf.org",
+      "ext": "107",
+      "bio": "Hal produces the annual and community impact reports."
+    },
+    {
+      "id": "mruelas",
+      "name": "Maya Ruelas",
+      "title": "Office & Operations Manager",
+      "email": "mruelas@cinderpeakscf.org",
+      "ext": "100",
+      "bio": "Maya keeps the office running and welcomes every visitor."
+    }
   ],
   "board": [
-    {"name": "Gloria Atcitty", "role": "Chair", "city": "Tuba City"},
-    {"name": "Raymond Kessler", "role": "Vice Chair", "city": "Prescott"},
-    {"name": "Fiona Marchetti", "role": "Treasurer", "city": "Flagstaff"},
-    {"name": "Desmond Achebe-Ross", "role": "Secretary", "city": "Sedona"},
-    {"name": "Lorraine Haskie", "role": "Director", "city": "Chinle"},
-    {"name": "Benjamin Okoro", "role": "Director", "city": "Flagstaff"},
-    {"name": "Carmen Delgado-Price", "role": "Director", "city": "Cottonwood"},
-    {"name": "Ingrid Sorensen", "role": "Director", "city": "Show Low"},
-    {"name": "Walter Chee", "role": "Director", "city": "Winslow"},
-    {"name": "Annika Patel", "role": "Director", "city": "Flagstaff"},
-    {"name": "Jeremiah Lomayestewa", "role": "Director", "city": "Kykotsmovi"},
-    {"name": "Teresa Murillo", "role": "Director", "city": "St. Johns"}
+    {
+      "name": "Gloria Atcitty",
+      "role": "Chair",
+      "city": "Tuba City"
+    },
+    {
+      "name": "Raymond Kessler",
+      "role": "Vice Chair",
+      "city": "Prescott"
+    },
+    {
+      "name": "Fiona Marchetti",
+      "role": "Treasurer",
+      "city": "Flagstaff"
+    },
+    {
+      "name": "Desmond Achebe-Ross",
+      "role": "Secretary",
+      "city": "Sedona"
+    },
+    {
+      "name": "Lorraine Haskie",
+      "role": "Director",
+      "city": "Chinle"
+    },
+    {
+      "name": "Benjamin Okoro",
+      "role": "Director",
+      "city": "Flagstaff"
+    },
+    {
+      "name": "Carmen Delgado-Price",
+      "role": "Director",
+      "city": "Cottonwood"
+    },
+    {
+      "name": "Ingrid Sorensen",
+      "role": "Director",
+      "city": "Show Low"
+    },
+    {
+      "name": "Walter Chee",
+      "role": "Director",
+      "city": "Winslow"
+    },
+    {
+      "name": "Annika Patel",
+      "role": "Director",
+      "city": "Flagstaff"
+    },
+    {
+      "name": "Jeremiah Lomayestewa",
+      "role": "Director",
+      "city": "Kykotsmovi"
+    },
+    {
+      "name": "Teresa Murillo",
+      "role": "Director",
+      "city": "St. Johns"
+    }
   ],
   "committees": [
-    {"name": "Grants & Community Impact Committee", "chair": "Desmond Achebe-Ross", "text": "Reviews staff recommendations for all competitive grant programs and recommends awards to the full board."},
-    {"name": "Finance & Investment Committee", "chair": "Fiona Marchetti", "text": "Oversees the Foundation's investment policy, annual audit, and spending policy."},
-    {"name": "Plateau Indigenous Communities Fund Advisory Council", "chair": "Lorraine Haskie", "text": "Seven community members from tribal nations across northern Arizona who recommend all Plateau Fund grants."}
+    {
+      "name": "Grants & Community Impact Committee",
+      "chair": "Desmond Achebe-Ross",
+      "text": "Reviews staff recommendations for all competitive grant programs and recommends awards to the full board."
+    },
+    {
+      "name": "Finance & Investment Committee",
+      "chair": "Fiona Marchetti",
+      "text": "Oversees the Foundation's investment policy, annual audit, and spending policy."
+    },
+    {
+      "name": "Plateau Indigenous Communities Fund Advisory Council",
+      "chair": "Lorraine Haskie",
+      "text": "Seven community members from tribal nations across northern Arizona who recommend all Plateau Fund grants."
+    }
   ],
   "news": [
-    {"id": "fall-2026-awards", "date": "2026-10-06", "title": "Fall 2026 Community Impact awards reach 46 organizations", "summary": "The Foundation's board approved $612,500 in general operating support for arts, education, environment, and animal welfare organizations across all four counties.", "body": ["Forty-six organizations received Fall 2026 Community Impact Grants, ranging from a volunteer-run library in Fredonia to a youth orchestra in Prescott Valley. One third of this year's grantees are first-time recipients.", "The Spring 2027 cycle, which funds health, human services, and economic opportunity, opens on February 1, 2027. Applicants can review the guidelines now on the Community Impact Grants: Spring Cycle page."]},
-    {"id": "infant-care-brief", "date": "2026-09-15", "title": "New brief maps the infant care gap in northern Arizona", "summary": "Research commissioned by the First Steps Infant & Toddler Fund finds just one licensed infant care slot for every five infants in the four-county region.", "body": ["The Northern Arizona Infant Care Gap brief combines state licensing data with interviews from 64 parents and providers. It finds that rural Apache and Navajo counties face the steepest shortages.", "The findings will shape First Steps Fund priorities for 2027. The full brief is available in the Resources and Reports library."]},
-    {"id": "rapid-response-monsoon", "date": "2026-08-28", "title": "Rapid Response Fund supports monsoon flood recovery", "summary": "Eleven grants totaling $86,000 helped families in Coconino and Navajo counties recover from post-wildfire flooding.", "body": ["Following heavy monsoon rains over recent burn scars, the High Country Rapid Response & Resilience Fund awarded grants to food banks, chapter houses, and volunteer cleanup crews within ten business days of each request.", "The fund remains open on a rolling basis for nonprofits and tribal programs responding to declared emergencies."]}
+    {
+      "id": "fall-2026-awards",
+      "date": "2026-10-06",
+      "title": "Fall 2026 Community Impact awards reach 46 organizations",
+      "summary": "The Foundation's board approved $612,500 in general operating support for arts, education, environment, and animal welfare organizations across all four counties.",
+      "body": [
+        "Forty-six organizations received Fall 2026 Community Impact Grants, ranging from a volunteer-run library in Fredonia to a youth orchestra in Prescott Valley. One third of this year's grantees are first-time recipients.",
+        "The Spring 2027 cycle, which funds health, human services, and economic opportunity, opens on February 1, 2027. Applicants can review the guidelines now on the Community Impact Grants: Spring Cycle page."
+      ]
+    },
+    {
+      "id": "infant-care-brief",
+      "date": "2026-09-15",
+      "title": "New brief maps the infant care gap in northern Arizona",
+      "summary": "Research commissioned by the First Steps Infant & Toddler Fund finds just one licensed infant care slot for every five infants in the four-county region.",
+      "body": [
+        "The Northern Arizona Infant Care Gap brief combines state licensing data with interviews from 64 parents and providers. It finds that rural Apache and Navajo counties face the steepest shortages.",
+        "The findings will shape First Steps Fund priorities for 2027. The full brief is available in the Resources and Reports library."
+      ]
+    },
+    {
+      "id": "rapid-response-monsoon",
+      "date": "2026-08-28",
+      "title": "Rapid Response Fund supports monsoon flood recovery",
+      "summary": "Eleven grants totaling $86,000 helped families in Coconino and Navajo counties recover from post-wildfire flooding.",
+      "body": [
+        "Following heavy monsoon rains over recent burn scars, the High Country Rapid Response & Resilience Fund awarded grants to food banks, chapter houses, and volunteer cleanup crews within ten business days of each request.",
+        "The fund remains open on a rolling basis for nonprofits and tribal programs responding to declared emergencies."
+      ]
+    }
   ]
 }
