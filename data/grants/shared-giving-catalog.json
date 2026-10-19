@@ -1,0 +1,92 @@
+{
+  "id": "shared-giving-catalog",
+  "order": 9,
+  "title": "Shared Giving Catalog",
+  "short_title": "Shared Giving Catalog",
+  "program_type": "Donor-advised giving catalog (abbreviated application)",
+  "status": "Profiles due December 11, 2026",
+  "summary": "An abbreviated profile application that places northern Arizona nonprofits in the Foundation's 2027 Shared Giving Catalog, which is distributed to more than 300 donor-advised fundholders.",
+  "description": [
+    "The Shared Giving Catalog introduces Foundation fundholders to vetted nonprofits across the region. Each listed organization receives a one-page profile describing its work and a specific funding need. Fundholders recommend grants directly from their donor-advised funds.",
+    "Listing in the catalog is not a competitive grant. In 2026, 112 catalog organizations received $1.27 million in fundholder grants, with individual gifts ranging from $500 to $25,000.",
+    "The catalog is a good option for organizations that received a Community Impact Grant in 2026 and are not eligible to apply again until 2028."
+  ],
+  "focus_areas": [
+    "health-human-services",
+    "civic-economic-opportunity",
+    "education-youth",
+    "environment-land",
+    "arts-culture",
+    "animal-welfare"
+  ],
+  "impact_areas": [
+    "Any Community Impact field of interest",
+    "Specific, clearly described funding needs such as equipment, a program expansion, or general operations"
+  ],
+  "populations_served": [
+    "Any population served by eligible northern Arizona nonprofits"
+  ],
+  "geography": {
+    "summary": "Organizations must be located in or primarily serve residents of Coconino, Yavapai, Navajo, or Apache counties.",
+    "areas": [
+      "Coconino County",
+      "Yavapai County",
+      "Navajo County",
+      "Apache County"
+    ]
+  },
+  "eligibility": [
+    "Tax-exempt under Section 501(c)(3), a public agency, or a tribal program",
+    "Located in or primarily serving residents of Coconino, Yavapai, Navajo, or Apache counties",
+    "In operation for at least two years",
+    "Has filed its most recent IRS Form 990, 990-EZ, or 990-N"
+  ],
+  "funding": {
+    "type": "Fundholder grants recommended from donor-advised funds",
+    "summary": "Organizations list a funding need of $1,000 to $15,000; fundholder gifts vary",
+    "min": 1000,
+    "max": 15000,
+    "term": "Catalog circulates February through December 2027"
+  },
+  "dates": {
+    "opens": "2026-10-15",
+    "application_deadline": "2026-12-11",
+    "deadline_time": "5:00 p.m. MST",
+    "decision": "Catalog published February 1, 2027"
+  },
+  "how_to_apply": {
+    "intro": "The catalog profile is a short form that takes about two hours to complete.",
+    "steps": [
+      {
+        "title": "Download the profile form",
+        "text": "Complete the Shared Giving Catalog Profile Form, including a 150-word organizational summary and one funding need."
+      },
+      {
+        "title": "Gather a photo",
+        "text": "Select one high-resolution photo of your work and confirm you have permission from anyone pictured."
+      },
+      {
+        "title": "Submit",
+        "text": "Upload the form and photo in the CPCF Grant Portal under \"Shared Giving Catalog 2027\" by 5:00 p.m. MST on December 11, 2026."
+      },
+      {
+        "title": "Review and publication",
+        "text": "Foundation staff confirm eligibility and may suggest edits. The catalog is published to fundholders on February 1, 2027."
+      }
+    ]
+  },
+  "reporting": {
+    "summary": "Organizations that receive fundholder grants send a thank-you acknowledgment to the Foundation, which is forwarded to the fundholder. No formal grant report is required.",
+    "due": "Within 30 days of receiving a fundholder grant"
+  },
+  "documents": [
+    "guidelines-shared-giving-catalog-2027",
+    "shared-giving-catalog-profile-form"
+  ],
+  "contact": {
+    "name": "Simone Okafor",
+    "title": "Vice President, Philanthropy & Donor Relations",
+    "email": "sokafor@cinderpeakscf.org",
+    "phone": "(928) 555-0147 ext. 109"
+  }
+}

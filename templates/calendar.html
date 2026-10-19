@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% block description %}2026–2027 grant deadlines for all {{ site.org.name }} programs.{% endblock %}
+{% block main %}
+{{ m.page_hero("Grants Calendar", "Every application period, letter of inquiry deadline, and application deadline for the 2026–2027 grant year. Deadlines are 5:00 p.m. Mountain Standard Time (Arizona time).", [("Grants", "grants/"), ("Grants Calendar", "")], "Grants") }}
+<section class="section">
+  <div class="container">
+    <div class="table-wrap">
+      <table class="calendar-table">
+        <caption class="visually-hidden">Grant calendar</caption>
+        <thead><tr><th scope="col">Date</th><th scope="col">Program</th><th scope="col">Milestone</th></tr></thead>
+        <tbody>
+        {% for e in events %}
+          <tr{% if e.is_deadline %} class="is-deadline"{% endif %}>
+            <td><time datetime="{{ e.date }}">{{ e.date|longdate }}</time></td>
+            <td><a href="{{ url('grants/' ~ e.grant.id ~ '/') }}">{{ e.grant.title }}</a></td>
+            <td>{{ e.label }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <h2>Open year-round</h2>
+    <ul>
+      {% for g in rolling %}<li><a href="{{ url('grants/' ~ g.id ~ '/') }}">{{ g.title }}</a>: {{ g.dates.rolling }}</li>{% endfor %}
+    </ul>
+    <ul class="doc-list">{{ m.doc_item(docs_by_id['grants-calendar-2026-2027'], False) }}</ul>
+  </div>
+</section>
+{% endblock %}

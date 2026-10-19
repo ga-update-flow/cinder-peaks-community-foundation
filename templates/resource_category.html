@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% block description %}{{ category.intro }}{% endblock %}
+{% block main %}
+{{ m.page_hero(category.title, category.intro, [("Resources & Reports", "resources/"), (category.title, "")], "Document Library") }}
+<div class="container prose-layout">
+  <div>
+    {% if category.id == 'guidelines' %}
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Program</th><th scope="col">Guidelines / RFP</th><th scope="col">Next deadline</th></tr></thead>
+        <tbody>
+        {% for g in grants %}
+          {% set gl = g.documents|map('extract', docs_by_id)|selectattr('category', 'equalto', 'guidelines')|first %}
+          {% set nd = next_deadline(g) %}
+          <tr><th scope="row"><a href="{{ url('grants/' ~ g.id ~ '/') }}">{{ g.title }}</a></th>
+              <td><a href="{{ doc_href(gl.id) }}">{{ gl.title }} (PDF)</a></td>
+              <td>{% if nd %}{{ nd[0] }} {{ nd[1]|date }}{% else %}Rolling{% endif %}</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% endif %}
+    {% if category.id == 'reports' %}
+    <div class="prose">
+      <h2>Our financial accountability</h2>
+      <p>The Foundation's financial statements are audited each year by an independent accounting firm, and our Finance &amp; Investment Committee oversees the investment pool and spending policy. Questions about financial information may be directed to Corinne Abernathy, CPA, Chief Financial Officer, at <a href="mailto:cabernathy@cinderpeakscf.org">cabernathy@cinderpeakscf.org</a> or (928) 555-0147 ext. 105.</p>
+    </div>
+    {% endif %}
+    {% if category.id == 'learning' %}
+    <div class="prose">
+      <h2>Nonprofit Learning Hub</h2>
+      <p>The Nonprofit Learning Hub offers workshops, peer cohorts, and practical guides for executive directors, staff, and board members across northern Arizona. In 2025, 412 people attended 38 sessions. Hub programs pair with our <a href="{{ url('grants/stronger-nonprofits-capacity-grants/') }}">Stronger Nonprofits Capacity Grants</a>.</p>
+      <h3>2026–2027 programs</h3>
+      <ul>
+        <li><strong>Executive Director Peer Circle</strong>: monthly peer learning for nonprofit leaders, meeting in Flagstaff and online.</li>
+        <li><strong>Board Essentials</strong>: a three-session series on governance, finance, and fundraising for board members.</li>
+        <li><strong>Grant Writing Fundamentals</strong>: a two-part workshop offered before each Community Impact cycle.</li>
+        <li><strong>On the Road</strong>: workshops hosted in Page, Chinle, Show Low, and Cottonwood.</li>
+      </ul>
+      <p>To register, email <a href="mailto:{{ site.contact.learning_email }}">{{ site.contact.learning_email }}</a>.</p>
+    </div>
+    {% endif %}
+    <h2 class="doc-section-heading">Documents</h2>
+    <ul class="doc-list">
+      {% for d in documents if d.category == category.id %}{{ m.doc_item(d) }}{% endfor %}
+    </ul>
+  </div>
+  <aside class="prose-aside">
+    <div class="summary-card">
+      <h2>Document library</h2>
+      <ul class="aside-links">
+        <li><a href="{{ url('resources/') }}">All documents</a></li>
+        {% for c in categories.values() if c.id != category.id %}<li><a href="{{ url('resources/' ~ c.slug ~ '/') }}">{{ c.title }}</a></li>{% endfor %}
+      </ul>
+    </div>
+  </aside>
+</div>
+{% endblock %}

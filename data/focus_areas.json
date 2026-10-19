@@ -1,0 +1,173 @@
+{
+  "groups": [
+    {"id": "fields", "title": "Community Impact Fields of Interest", "intro": "Six fields of interest guide our two Community Impact Grant cycles. Health and economic fields are funded each spring; education, arts, environment, and animal welfare are funded each fall."},
+    {"id": "funds", "title": "Community Funds & Initiatives", "intro": "Four donor-built funds focus on communities and life stages where targeted investment makes an outsized difference. Each has its own advisory structure and application."}
+  ],
+  "areas": [
+    {
+      "id": "health-human-services",
+      "group": "fields",
+      "title": "Health & Human Services",
+      "icon": "heart",
+      "summary": "Safe housing, enough food, and access to care for every household in the high country.",
+      "description": "Distance is a health issue in northern Arizona. Many families live an hour or more from a grocery store, pharmacy, or behavioral health provider, and housing costs in Flagstaff and Sedona have pushed working families farther from services. We invest in organizations that close those gaps.",
+      "goals": [
+        "Increase the supply of affordable and supportive housing and prevent homelessness",
+        "Reduce food insecurity, especially in rural communities and on tribal lands",
+        "Expand access to primary, dental, and behavioral health care",
+        "Help older adults age safely in their own homes and communities",
+        "Strengthen services for survivors of domestic and sexual violence"
+      ],
+      "populations": ["Low-income households", "Older adults", "People experiencing homelessness", "Rural residents", "Survivors of violence"],
+      "grants": ["community-impact-grants-spring", "rapid-response-resilience-fund"]
+    },
+    {
+      "id": "civic-economic-opportunity",
+      "group": "fields",
+      "title": "Civic & Economic Opportunity",
+      "icon": "briefcase",
+      "summary": "Good jobs, financial stability, and a strong civic voice for every community.",
+      "description": "Seasonal tourism and service jobs make up a large share of northern Arizona's economy. We support efforts that help workers build skills and savings, help small and Indigenous-owned businesses grow, and help residents take part in local decision-making.",
+      "goals": [
+        "Expand workforce training tied to living-wage careers",
+        "Support hourly and seasonal workers with financial coaching and benefits access",
+        "Grow small, rural, and Indigenous-owned businesses",
+        "Increase civic participation, open government, and nonpartisan voter education",
+        "Advance legal aid and fair treatment in housing and employment"
+      ],
+      "populations": ["Hourly and seasonal workers", "Small business owners", "Young adults ages 18–24", "Immigrant and refugee families", "Rural residents"],
+      "grants": ["community-impact-grants-spring", "stronger-nonprofits-capacity-grants"]
+    },
+    {
+      "id": "education-youth",
+      "group": "fields",
+      "title": "Education & Youth",
+      "icon": "book",
+      "summary": "Strong pathways from kindergarten through college and career.",
+      "description": "Students in our region travel long distances to school, and many rural districts struggle to recruit teachers. We fund programs that build early literacy and math skills, reconnect young people who have left school, and open doors to college and skilled trades.",
+      "goals": [
+        "Raise third-grade reading and eighth-grade math proficiency",
+        "Expand out-of-school-time learning, mentoring, and summer programs",
+        "Re-engage opportunity youth ages 16–24 in school or work",
+        "Increase college and career credential completion",
+        "Support culturally grounded and Native language education"
+      ],
+      "populations": ["Children and youth ages 5–18", "Opportunity youth ages 16–24", "First-generation college students", "English language learners"],
+      "grants": ["community-impact-grants-fall"]
+    },
+    {
+      "id": "environment-land",
+      "group": "fields",
+      "title": "Environment & Land Stewardship",
+      "icon": "leaf",
+      "summary": "Healthy forests, clean water, and resilient landscapes.",
+      "description": "Our region holds the world's largest contiguous ponderosa pine forest, the Little Colorado and Verde rivers, and fragile desert grasslands. Wildfire, drought, and legacy uranium contamination put those places and the people who depend on them at risk.",
+      "goals": [
+        "Protect watersheds, springs, and water quality",
+        "Support forest restoration and wildfire-adapted communities",
+        "Remediate contaminated land and advance environmental justice",
+        "Expand renewable energy access in rural and tribal communities",
+        "Strengthen local food systems and regenerative agriculture"
+      ],
+      "populations": ["Rural and tribal communities", "Farmers and ranchers", "Youth in outdoor education programs"],
+      "grants": ["community-impact-grants-fall", "rapid-response-resilience-fund"]
+    },
+    {
+      "id": "arts-culture",
+      "group": "fields",
+      "title": "Arts & Culture",
+      "icon": "palette",
+      "summary": "Creative expression that connects people and carries heritage forward.",
+      "description": "From Hopi katsina carvers to Prescott's community theaters, artists define the character of the high country. We support arts organizations and cultural practitioners who bring people together and keep living traditions strong.",
+      "goals": [
+        "Increase arts access for youth and families in rural communities",
+        "Preserve and pass on cultural heritage and traditional arts",
+        "Support community gatherings, festivals, and public art",
+        "Strengthen the financial health of small arts organizations"
+      ],
+      "populations": ["Youth and families", "Traditional artists and culture bearers", "Rural audiences"],
+      "grants": ["community-impact-grants-fall"]
+    },
+    {
+      "id": "animal-welfare",
+      "group": "fields",
+      "title": "Animal Welfare",
+      "icon": "paw",
+      "summary": "Humane care for companion animals and protection for native wildlife.",
+      "description": "Large rural areas and limited veterinary access mean free-roaming dog and cat populations are a public health concern in parts of our region. We fund spay and neuter outreach, shelter care, and wildlife rehabilitation.",
+      "goals": [
+        "Expand low-cost spay, neuter, and vaccination clinics in rural and tribal communities",
+        "Prevent animal cruelty and support humane education",
+        "Support pet retention for families facing housing or financial crises",
+        "Protect and rehabilitate native wildlife"
+      ],
+      "populations": ["Rural pet owners", "Families at risk of pet surrender", "Older adults with companion animals"],
+      "grants": ["community-impact-grants-fall"]
+    },
+    {
+      "id": "early-childhood",
+      "group": "funds",
+      "title": "Early Childhood",
+      "icon": "sprout",
+      "summary": "A healthy start for every infant and toddler.",
+      "description": "The First Steps Infant & Toddler Fund was created in 2014 by a coalition of Flagstaff families to make the first three years of life a regional priority. Our 2026 research found just one licensed infant care slot for every five infants in the four-county region.",
+      "goals": [
+        "Increase the number of high-quality infant and toddler care slots",
+        "Support young parents ages 24 and under",
+        "Support grandparents and kin caregivers raising children under three",
+        "Strengthen pay, training, and retention in the early childhood workforce",
+        "Expand access to prenatal and reproductive health services for young adults"
+      ],
+      "populations": ["Infants and toddlers ages 0–3", "Young parents ages 24 and under", "Grandparents and kin caregivers", "Early childhood educators"],
+      "grants": ["first-steps-infant-toddler-fund"]
+    },
+    {
+      "id": "indigenous-communities",
+      "group": "funds",
+      "title": "Indigenous Communities",
+      "icon": "mesa",
+      "summary": "Native-led solutions grounded in language, land, and culture.",
+      "description": "Twelve federally recognized tribes and nations hold lands in Arizona's high country. The Plateau Indigenous Communities Fund, created in 1996, is advised by a council of community members from those nations and invests in Native-led priorities.",
+      "goals": [
+        "Revitalize Indigenous languages and intergenerational knowledge",
+        "Support traditional foodways, land stewardship, and water protection",
+        "Strengthen Native-led nonprofits and tribal community programs",
+        "Support Native youth leadership and wellness"
+      ],
+      "populations": ["Tribal members and communities", "Native youth and elders", "Native-led nonprofits"],
+      "grants": ["plateau-indigenous-communities-fund"]
+    },
+    {
+      "id": "lgbtq-communities",
+      "group": "funds",
+      "title": "LGBTQ+ Communities",
+      "icon": "prism",
+      "summary": "Safety, health, and belonging for LGBTQ+ Arizonans.",
+      "description": "The Prism Fund was established in 2009 by LGBTQ+ donors and allies who wanted rural Arizonans to have the same support available in Phoenix and Tucson. The fund accepts applications from across the state.",
+      "goals": [
+        "Expand affirming health care, including HIV prevention and treatment",
+        "Make schools safer for LGBTQ+ students",
+        "Address discrimination in housing, employment, and public services",
+        "Reduce isolation among LGBTQ+ older adults and rural residents"
+      ],
+      "populations": ["LGBTQ+ youth", "Transgender and two-spirit people", "LGBTQ+ older adults", "People living with HIV"],
+      "grants": ["prism-fund-lgbtq"]
+    },
+    {
+      "id": "black-futures",
+      "group": "funds",
+      "title": "Black Futures",
+      "icon": "sun",
+      "summary": "Investing in Black-led organizations and Black community wealth.",
+      "description": "The Rising Roots Black Futures Fund was launched in 2021 by Black philanthropists in northern Arizona to grow investment in Black-led organizations statewide, honor Black history in the region, and build long-term community wealth.",
+      "goals": [
+        "Strengthen Black-led nonprofits and community institutions",
+        "Support Black artistic expression and preservation of local Black history",
+        "Expand financial literacy, homeownership, and entrepreneurship",
+        "Support Black youth leadership and education"
+      ],
+      "populations": ["Black residents and families", "Black-led organizations", "Black youth and students", "Black entrepreneurs"],
+      "grants": ["rising-roots-black-futures-fund"]
+    }
+  ]
+}

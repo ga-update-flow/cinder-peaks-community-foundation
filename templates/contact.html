@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% block description %}Contact {{ site.org.name }} in Flagstaff, Arizona: phone, email, address, office hours, and staff contacts.{% endblock %}
+{% block main %}
+{{ m.page_hero("Contact Us", "We're glad to hear from you. Reach the right person directly using the contacts below.", [("Contact", "")], "Contact") }}
+<section class="section">
+  <div class="container contact-grid">
+    <div class="contact-block">
+      <span class="focus-icon">{{ m.icon('pin') }}</span>
+      <h2>Visit</h2>
+      <address>{{ site.org.name }}<br>{{ site.contact.street }}<br>{{ site.contact.city_state_zip }}</address>
+      <p>{{ site.contact.parking }}</p>
+    </div>
+    <div class="contact-block">
+      <span class="focus-icon">{{ m.icon('mail') }}</span>
+      <h2>Mail</h2>
+      <address>{{ site.org.name }}<br>{{ site.contact.mailing }}<br>{{ site.contact.mailing_city_state_zip }}</address>
+    </div>
+    <div class="contact-block">
+      <span class="focus-icon">{{ m.icon('phone') }}</span>
+      <h2>Call</h2>
+      <p>Phone: <a href="tel:{{ site.contact.phone_href }}">{{ site.contact.phone }}</a><br>Fax: {{ site.contact.fax }}</p>
+      <p>{{ site.contact.hours }}</p>
+    </div>
+  </div>
+</section>
+<section class="section section-sand">
+  <div class="container">
+    <h2>Email us</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Topic</th><th scope="col">Email</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">General questions</th><td><a href="mailto:{{ site.contact.general_email }}">{{ site.contact.general_email }}</a></td></tr>
+          <tr><th scope="row">Grants and applications</th><td><a href="mailto:{{ site.contact.grants_email }}">{{ site.contact.grants_email }}</a></td></tr>
+          <tr><th scope="row">Giving and charitable funds</th><td><a href="mailto:{{ site.contact.donors_email }}">{{ site.contact.donors_email }}</a></td></tr>
+          <tr><th scope="row">Nonprofit Learning Hub</th><td><a href="mailto:{{ site.contact.learning_email }}">{{ site.contact.learning_email }}</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <h2 id="grant-contacts">Grant program contacts</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Program</th><th scope="col">Contact</th><th scope="col">Email</th><th scope="col">Phone</th></tr></thead>
+        <tbody>
+        {% for g in grants %}
+          <tr><th scope="row"><a href="{{ url('grants/' ~ g.id ~ '/') }}">{{ g.title }}</a></th><td>{{ g.contact.name }}<br><span class="muted">{{ g.contact.title }}</span></td><td><a href="mailto:{{ g.contact.email }}">{{ g.contact.email }}</a></td><td>{{ g.contact.phone }}</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<section class="section section-sand">
+  <div class="container split split-even">
+    <div>
+      <h2 id="closures">2026–2027 office closures</h2>
+      <ul>{% for c in site.contact.closures_2026_2027 %}<li>{{ c }}</li>{% endfor %}</ul>
+    </div>
+    <div>
+      <h2>Staff directory</h2>
+      <p>Direct email addresses and extensions for every staff member are listed on the <a href="{{ url('about/our-people/') }}">Our People</a> page.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

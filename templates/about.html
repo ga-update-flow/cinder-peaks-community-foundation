@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% block description %}About {{ site.org.name }}: mission, history, service area, and approach to community impact in northern Arizona.{% endblock %}
+{% block main %}
+{{ m.page_hero("About the Foundation", site.org.mission, [("About Us", "")], "About Us") }}
+<section class="section">
+  <div class="container split">
+    <div class="prose">
+      <h2 id="history">Our history</h2>
+      <p>{{ site.org.name }} was established in {{ site.org.founded }} by a group of Flagstaff families, business owners, and civic leaders who wanted a permanent, local source of charitable support for the region. The first fund, a $40,000 unrestricted gift, supported a community health clinic and a children's library program.</p>
+      <p>Today the Foundation stewards {{ site.stats[2].value }} charitable funds created by individuals, families, businesses, and nonprofits. Together, those funds have granted more than $94 million to community causes. The Foundation is an independent, publicly supported 501(c)(3) public charity governed by a volunteer board of directors drawn from across the region.</p>
+      <h2 id="mission">Mission and vision</h2>
+      <p><strong>Mission.</strong> {{ site.org.mission }}</p>
+      <p><strong>Vision.</strong> {{ site.org.vision }}</p>
+      <h2 id="what-we-do">What we do</h2>
+      <ul class="check-list">
+        <li><strong>Grantmaking.</strong> We run nine <a href="{{ url('grants/') }}">grant programs</a> that award about $2.4 million in competitive grants each year.</li>
+        <li><strong>Charitable funds.</strong> We help donors create donor-advised, designated, field-of-interest, and scholarship funds, and we manage endowments for local nonprofits.</li>
+        <li><strong>Nonprofit learning.</strong> Our <a href="{{ url('resources/nonprofit-learning-hub/') }}">Nonprofit Learning Hub</a> offers workshops, peer cohorts, and practical guides.</li>
+        <li><strong>Community leadership.</strong> We commission research, such as the <a href="{{ doc_href('infant-care-gap-brief-2026') }}">Northern Arizona Infant Care Gap brief</a>, and convene partners around shared challenges.</li>
+      </ul>
+      <h2 id="approach">Our approach to community impact</h2>
+      <p>We believe the people closest to a challenge are best positioned to solve it. That belief shapes how we work:</p>
+      <ul>
+        <li>We favor unrestricted general operating support, because nonprofits know best where their dollars are needed.</li>
+        <li>Community advisory councils recommend grants for the Plateau Indigenous Communities Fund, the First Steps Fund, and the Rising Roots Fund.</li>
+        <li>We set award amounts by budget size so small rural organizations compete fairly with larger ones.</li>
+        <li>We keep applications and reports short, and we accept oral and video submissions for several programs.</li>
+      </ul>
+    </div>
+    <aside>
+      <div class="summary-card">
+        <h2>Our values</h2>
+        {% for v in site.org['values'] %}
+        <h3>{{ v.name }}</h3>
+        <p>{{ v.text }}</p>
+        {% endfor %}
+      </div>
+    </aside>
+  </div>
+</section>
+<section class="section section-sand">
+  <div class="container">
+    <h2>Learn more</h2>
+    <ul class="link-grid">
+      <li><a href="{{ url('about/our-people/') }}">Our People</a><span>Staff, board, and committees</span></li>
+      <li><a href="{{ url('about/service-area/') }}">Our Service Area</a><span>Four counties and twelve tribal nations</span></li>
+      <li><a href="{{ url('resources/annual-impact-reports/') }}">Financials &amp; Reports</a><span>Annual, impact, and financial reports</span></li>
+      <li><a href="{{ url('about/news/') }}">News &amp; Stories</a><span>Recent announcements</span></li>
+    </ul>
+  </div>
+</section>
+{% endblock %}

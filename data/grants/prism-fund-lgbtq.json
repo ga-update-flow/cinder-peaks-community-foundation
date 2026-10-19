@@ -1,0 +1,86 @@
+{
+  "id": "prism-fund-lgbtq",
+  "order": 5,
+  "title": "Prism Fund for LGBTQ+ Arizonans",
+  "short_title": "Prism Fund",
+  "program_type": "Competitive grant",
+  "status": "Accepting applications through November 20, 2026",
+  "summary": "Grants of $5,000 to $15,000 to organizations across Arizona that advance the health, safety, and belonging of LGBTQ+ people, with special attention to rural communities.",
+  "description": [
+    "The Prism Fund was established in 2009 by LGBTQ+ donors and allies who wanted LGBTQ+ people in rural Arizona to have access to the same support available in the state's largest cities. Today the fund accepts applications from organizations statewide.",
+    "The fund supports both established LGBTQ+ organizations and mainstream organizations that are building programs to serve LGBTQ+ community members. Applications are reviewed by a committee of fundholders and community members."
+  ],
+  "focus_areas": ["lgbtq-communities"],
+  "impact_areas": [
+    "Ending new HIV transmissions and supporting people living with HIV",
+    "Affirming physical, behavioral, and gender-affirming health care",
+    "Safe and supportive schools for LGBTQ+ students",
+    "Addressing discrimination in housing, employment, and public services",
+    "Reducing isolation among LGBTQ+ older adults and rural residents"
+  ],
+  "populations_served": [
+    "LGBTQ+ youth and young adults",
+    "Transgender, nonbinary, and two-spirit people",
+    "LGBTQ+ older adults",
+    "People living with or at risk of HIV",
+    "LGBTQ+ residents of rural communities"
+  ],
+  "geography": {
+    "summary": "Applications are accepted from organizations serving communities anywhere in Arizona. Proposals serving rural counties receive additional consideration.",
+    "areas": ["Statewide (Arizona)"]
+  },
+  "eligibility": [
+    "Tax-exempt under Section 501(c)(3), a public agency, a federally recognized tribe or tribal program, or a project with a qualified fiscal sponsor",
+    "Serves LGBTQ+ people in Arizona",
+    "Has an anti-discrimination policy that includes sexual orientation and gender identity",
+    "One application per organization per year"
+  ],
+  "not_eligible": [
+    "Individuals or scholarships",
+    "Religious activities",
+    "Capital campaigns or endowments",
+    "Lobbying or partisan political activity"
+  ],
+  "funding": {
+    "type": "Project or general operating support",
+    "summary": "$5,000 to $15,000",
+    "min": 5000,
+    "max": 15000,
+    "term": "One year, beginning February 1, 2027",
+    "total_available": "Approximately $140,000"
+  },
+  "dates": {
+    "opens": "2026-10-01",
+    "application_deadline": "2026-11-20",
+    "deadline_time": "5:00 p.m. MST",
+    "decision": "Applicants notified by January 15, 2027",
+    "grant_period": "February 1, 2027 – January 31, 2028"
+  },
+  "how_to_apply": {
+    "intro": "The Prism Fund uses a single-stage application submitted through the CPCF Grant Portal.",
+    "steps": [
+      {"title": "Read the guidelines", "text": "Download the Prism Fund 2026–2027 Grant Guidelines."},
+      {"title": "Prepare the application", "text": "Use the Community Impact Grant Application Worksheet to draft responses. Prism applicants also answer two fund-specific questions listed in the guidelines."},
+      {"title": "Submit online", "text": "Submit the application and budget in the CPCF Grant Portal by 5:00 p.m. MST on November 20, 2026."},
+      {"title": "Decision", "text": "The Prism Fund committee reviews applications in December. Applicants are notified by January 15, 2027."}
+    ]
+  },
+  "review_criteria": [
+    "Leadership and involvement of LGBTQ+ people in the organization",
+    "Clarity of need and approach",
+    "Reach into rural or underserved communities",
+    "Feasibility and organizational capacity"
+  ],
+  "reporting": {
+    "summary": "Grantees submit a Community Impact Story Report at the end of the grant year.",
+    "items": [
+      "A short narrative or photo story describing results",
+      "Number of people served",
+      "Permission for public sharing, with care for participant privacy and safety"
+    ],
+    "due": "February 28, 2028",
+    "forms": ["community-impact-story-report-form"]
+  },
+  "documents": ["guidelines-prism-fund-2026", "community-impact-application-worksheet", "grant-project-budget-template", "community-impact-story-report-form"],
+  "contact": {"name": "Elena Brightwater", "title": "Senior Program Officer, Health & Economic Opportunity", "email": "ebrightwater@cinderpeakscf.org", "phone": "(928) 555-0147 ext. 115"}
+}

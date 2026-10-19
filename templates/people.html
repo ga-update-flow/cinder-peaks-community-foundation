@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% block description %}Staff, board of directors, and committees of {{ site.org.name }}.{% endblock %}
+{% block main %}
+{{ m.page_hero("Our People", "Our staff and volunteer board bring deep roots in every part of the region we serve.", [("About Us", "about/"), ("Our People", "")], "About Us") }}
+<section class="section">
+  <div class="container">
+    <h2 id="staff">Staff</h2>
+    <ul class="people-grid">
+      {% for s in site.staff %}
+      <li class="person">
+        <span class="avatar" aria-hidden="true">{{ s.name|initials }}</span>
+        <div>
+          <h3>{{ s.name }}</h3>
+          <p class="person-title">{{ s.title }}</p>
+          <p>{{ s.bio }}</p>
+          <p class="person-contact"><a href="mailto:{{ s.email }}">{{ s.email }}</a> · ext. {{ s.ext }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+<section class="section section-sand">
+  <div class="container">
+    <h2 id="board">Board of directors</h2>
+    <ul class="board-grid">
+      {% for b in site.board %}
+      <li><span class="board-name">{{ b.name }}</span><span class="board-role">{{ b.role }}{% if b.role != 'Director' %}, Board of Directors{% endif %}</span><span class="board-city">{{ b.city }}, Arizona</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <h2 id="committees">Committees</h2>
+    <div class="card-grid">
+      {% for c in site.committees %}
+      <article class="card"><h3 class="card-title">{{ c.name }}</h3><p class="card-kicker">Chair: {{ c.chair }}</p><p>{{ c.text }}</p></article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

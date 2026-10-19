@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% block main %}
+{{ m.page_hero("Site Map", "Every page and document on this website.", [("Site Map", "")]) }}
+<div class="container section sitemap-cols">
+  <div>
+    <h2>Pages</h2>
+    <ul>
+      {% for path, tpl, title, extra in pages %}<li><a href="{{ url(path) }}">{{ title or 'Home' }}</a></li>{% endfor %}
+    </ul>
+  </div>
+  <div>
+    <h2>Documents</h2>
+    {% for c in categories.values() %}
+    <h3>{{ c.title }}</h3>
+    <ul>
+      {% for d in documents if d.category == c.id %}<li><a href="{{ doc_href(d.id) }}">{{ d.title }} (PDF)</a>{% if 'docx' in d.formats %} · <a href="{{ doc_href(d.id, 'docx') }}">Word</a>{% endif %}</li>{% endfor %}
+    </ul>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

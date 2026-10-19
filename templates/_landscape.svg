@@ -1,0 +1,20 @@
+<svg viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7E3C6"/><stop offset="1" stop-color="#F4EEE4"/></linearGradient>
+    <clipPath id="frame"><rect x="0" y="0" width="560" height="420" rx="28"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="560" height="420" fill="url(#sky)"/>
+    <circle cx="420" cy="110" r="46" fill="#D9A441"/>
+    <path d="M0 250 L120 120 L170 170 L240 70 L330 190 L380 150 L560 260 L560 420 L0 420Z" fill="#7C8C88"/>
+    <path d="M240 70 L265 104 L250 98 L240 112 L228 96 L216 104Z" fill="#FFFFFF" opacity=".85"/>
+    <path d="M0 300 L90 220 L150 260 L230 180 L250 180 L330 270 L420 220 L560 300 L560 420 L0 420Z" fill="#1F2A2E"/>
+    <path d="M300 320 L360 240 L392 240 L452 320Z" fill="#A8432A"/>
+    <path d="M0 330 C120 300 220 340 320 318 C420 296 480 320 560 310 L560 420 L0 420Z" fill="#2F5D50"/>
+    <g fill="#24493F">
+      <path d="M60 340 l14 -46 l14 46z"/><path d="M84 346 l11 -36 l11 36z"/><path d="M470 334 l15 -50 l15 50z"/>
+      <path d="M498 340 l11 -38 l11 38z"/><path d="M200 352 l12 -40 l12 40z"/><path d="M30 352 l10 -32 l10 32z"/>
+    </g>
+    <path d="M0 380 C140 360 260 392 400 372 C470 362 520 368 560 364 L560 420 L0 420Z" fill="#C9B79A"/>
+  </g>
+</svg>

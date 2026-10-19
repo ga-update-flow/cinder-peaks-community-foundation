@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% block description %}News and announcements from {{ site.org.name }}.{% endblock %}
+{% block main %}
+{{ m.page_hero("News & Stories", "Announcements, grant awards, and stories from across northern Arizona.", [("About Us", "about/"), ("News & Stories", "")], "About Us") }}
+<section class="section">
+  <div class="container prose">
+    {% for n in site.news %}
+    <article class="news-article" id="{{ n.id }}">
+      <p class="news-date"><time datetime="{{ n.date }}">{{ n.date|date }}</time></p>
+      <h2>{{ n.title }}</h2>
+      {% for p in n.body %}<p>{{ p }}</p>{% endfor %}
+    </article>
+    {% endfor %}
+    <p>Related: <a href="{{ url('grants/community-impact-grants-spring/') }}">Community Impact Grants: Spring Cycle</a> · <a href="{{ doc_href('infant-care-gap-brief-2026') }}">Northern Arizona Infant Care Gap brief (PDF)</a> · <a href="{{ url('grants/rapid-response-resilience-fund/') }}">Rapid Response &amp; Resilience Fund</a></p>
+  </div>
+</section>
+{% endblock %}

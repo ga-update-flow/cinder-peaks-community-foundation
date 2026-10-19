@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% block description %}Answers to common questions from grant applicants to {{ site.org.name }}.{% endblock %}
+{% block main %}
+{{ m.page_hero("Grant Seeker FAQ", "Answers to the questions we hear most often from applicants.", [("Grants", "grants/"), ("FAQ", "")], "Grants") }}
+<div class="container prose-layout">
+  <div class="prose">
+    <h2>General questions</h2>
+    <h3>Can my organization apply to more than one program in the same year?</h3>
+    <p>Yes. You may apply for one Community Impact Grant per calendar year and also apply to any of the community funds, the Stronger Nonprofits Capacity Grants, and the Rapid Response Fund.</p>
+    <h3>What time are deadlines?</h3>
+    <p>All deadlines are 5:00 p.m. Mountain Standard Time. Arizona does not observe daylight saving time, so this is the same as Pacific Daylight Time from March through November.</p>
+    <h3>Do you fund organizations outside northern Arizona?</h3>
+    <p>The Prism Fund, Rising Roots Black Futures Fund, and Plateau Indigenous Communities Fund accept applications from anywhere in Arizona. All other programs serve Coconino, Yavapai, Navajo, and Apache counties.</p>
+    <h3>Do you make grants to individuals?</h3>
+    <p>No. Scholarships are awarded through separate donor-established scholarship funds. Individuals affected by emergencies can find help through nonprofits supported by our <a href="{{ url('grants/rapid-response-resilience-fund/') }}">Rapid Response Fund</a>.</p>
+    <h3>Can I get feedback if my application is declined?</h3>
+    <p>Yes. Contact the program officer listed on the program page to schedule a feedback call.</p>
+    {% for g in grants if g.faq %}
+    <h2>{{ g.title }}</h2>
+    {% for f in g.faq %}
+    <h3>{{ f.q }}</h3>
+    <p>{{ f.a }}</p>
+    {% endfor %}
+    <p><a href="{{ url('grants/' ~ g.id ~ '/') }}">Full program details for {{ g.short_title }}</a></p>
+    {% endfor %}
+  </div>
+  <aside class="prose-aside">
+    {{ m.contact_card({"name": "Grants & Community Impact", "title": "General grant questions", "email": site.contact.grants_email, "phone": site.contact.phone}, "Still have questions?") }}
+  </aside>
+</div>
+{% endblock %}

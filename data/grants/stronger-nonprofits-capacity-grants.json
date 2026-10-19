@@ -1,0 +1,126 @@
+{
+  "id": "stronger-nonprofits-capacity-grants",
+  "order": 7,
+  "title": "Stronger Nonprofits Capacity Grants",
+  "short_title": "Capacity Grants",
+  "program_type": "Competitive capacity-building grant (two-stage)",
+  "status": "Letters of inquiry due November 13, 2026",
+  "summary": "Grants of $5,000 to $20,000 that help small and mid-sized northern Arizona nonprofits strengthen governance, finances, fundraising, technology, and leadership.",
+  "description": [
+    "Strong communities need strong nonprofits. Stronger Nonprofits Capacity Grants fund time-limited projects that make an organization more effective and resilient, such as a strategic plan, a new financial management system, a fundraising plan, board development, or leadership succession planning.",
+    "Capacity grants are paired with the Foundation's Nonprofit Learning Hub. Grantees join a peer cohort that meets four times during the grant year, and many projects use consultants from the Foundation's vetted consultant roster.",
+    "Capacity grants do not count against an organization's eligibility for Community Impact Grants."
+  ],
+  "focus_areas": [
+    "civic-economic-opportunity"
+  ],
+  "impact_areas": [
+    "Strategic and business planning",
+    "Financial management systems and controls",
+    "Fund development planning and donor database systems",
+    "Board recruitment, training, and governance policies",
+    "Technology, data, and cybersecurity improvements",
+    "Executive transition and leadership succession planning"
+  ],
+  "populations_served": [
+    "Nonprofit staff, executive directors, and board members",
+    "Communities served by small and mid-sized nonprofits"
+  ],
+  "geography": {
+    "summary": "Organizations must be headquartered in Coconino, Yavapai, Navajo, or Apache counties.",
+    "areas": [
+      "Coconino County",
+      "Yavapai County",
+      "Navajo County",
+      "Apache County"
+    ]
+  },
+  "eligibility": [
+    "Tax-exempt under Section 501(c)(3), or a tribal nonprofit program",
+    "Headquartered in Coconino, Yavapai, Navajo, or Apache counties",
+    "Annual operating budget between $50,000 and $2 million",
+    "At least one paid staff member or a full-time volunteer executive",
+    "Executive director and board chair commit to participating in the peer learning cohort"
+  ],
+  "not_eligible": [
+    "Ongoing program or operating costs",
+    "Fiscally sponsored projects",
+    "Capital equipment unrelated to the capacity project",
+    "Organizations that received a Stronger Nonprofits Capacity Grant in 2025 or 2026"
+  ],
+  "funding": {
+    "type": "Capacity-building project support",
+    "summary": "$5,000 to $20,000",
+    "min": 5000,
+    "max": 20000,
+    "term": "Twelve months, beginning March 1, 2027",
+    "total_available": "Approximately $180,000"
+  },
+  "dates": {
+    "opens": "2026-10-01",
+    "loi_deadline": "2026-11-13",
+    "deadline_time": "5:00 p.m. MST",
+    "invitation_date": "2026-12-04",
+    "application_deadline": "2027-01-22",
+    "decision": "Award decisions announced by February 19, 2027",
+    "grant_period": "March 1, 2027 – February 29, 2028"
+  },
+  "how_to_apply": {
+    "intro": "Capacity grants use a two-stage process. Completing the Capacity Readiness Self-Assessment before submitting a letter of inquiry is required.",
+    "steps": [
+      {
+        "title": "Assess readiness",
+        "text": "Complete the Capacity Readiness Self-Assessment with your board chair. Attach it to your letter of inquiry."
+      },
+      {
+        "title": "Submit a letter of inquiry",
+        "text": "Complete the Letter of Inquiry Template and email it with the self-assessment to learning@cinderpeakscf.org by 5:00 p.m. MST on November 13, 2026."
+      },
+      {
+        "title": "Planning conversation",
+        "text": "Invited applicants meet with the Nonprofit Learning Coordinator to refine the project scope. Invitations are sent by December 4, 2026."
+      },
+      {
+        "title": "Submit the full application",
+        "text": "Submit the full application, Grant Project Budget Template, and any consultant proposal in the CPCF Grant Portal by 5:00 p.m. MST on January 22, 2027."
+      },
+      {
+        "title": "Decision and cohort launch",
+        "text": "Awards are announced by February 19, 2027. The first cohort session takes place in March 2027."
+      }
+    ]
+  },
+  "review_criteria": [
+    "The project addresses a clearly identified organizational need",
+    "Leadership and board commitment",
+    "Realistic scope, timeline, and budget",
+    "Potential to strengthen the organization's long-term sustainability"
+  ],
+  "reporting": {
+    "summary": "Grantees submit a mid-year progress report and a final grant report, and participate in all four cohort sessions.",
+    "items": [
+      "Progress on project milestones",
+      "Changes in organizational practice resulting from the project",
+      "Budget-to-actual expenses and consultant deliverables"
+    ],
+    "due": "Interim report due September 15, 2027; final report due March 31, 2028",
+    "forms": [
+      "interim-progress-report-form",
+      "final-grant-report-form"
+    ]
+  },
+  "documents": [
+    "rfp-capacity-grants-2027",
+    "letter-of-inquiry-template",
+    "capacity-readiness-self-assessment",
+    "grant-project-budget-template",
+    "interim-progress-report-form",
+    "final-grant-report-form"
+  ],
+  "contact": {
+    "name": "Wren Castellano",
+    "title": "Nonprofit Learning Coordinator",
+    "email": "wcastellano@cinderpeakscf.org",
+    "phone": "(928) 555-0147 ext. 124"
+  }
+}

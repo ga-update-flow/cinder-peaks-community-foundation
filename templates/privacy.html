@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% block main %}
+{{ m.page_hero("Privacy Policy", None, [("Privacy Policy", "")]) }}
+<div class="container prose section">
+  <p>Effective October 1, 2026.</p>
+  <h2>Information we collect</h2>
+  <p>This website does not use cookies, analytics, or tracking scripts, and it does not collect personal information. If you email or call the Foundation, we use the information you provide only to respond to you.</p>
+  <h2>Grant applicants</h2>
+  <p>Information submitted in grant applications is shared only with Foundation staff, board and committee members, and community advisors who review applications. We do not sell or rent applicant or donor information.</p>
+  <h2>Donors</h2>
+  <p>We honor requests for anonymity and never share donor information without permission.</p>
+  <h2>Questions</h2>
+  <p>Contact us at <a href="mailto:{{ site.contact.general_email }}">{{ site.contact.general_email }}</a> or {{ site.contact.phone }}.</p>
+</div>
+{% endblock %}

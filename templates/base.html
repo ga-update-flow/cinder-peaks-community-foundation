@@ -1,0 +1,161 @@
+{% import "macros.html" as m with context %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page_title %}{{ page_title }} | {% endif %}{{ site.org.name }}{% if not page_title %} | {{ site.org.tagline }}{% endif %}</title>
+  <meta name="description" content="{% block description %}{{ site.org.name }} awards grants and manages charitable funds serving {{ site.org.service_area_summary }}.{% endblock %}">
+  {% if noindex %}<meta name="robots" content="noindex">{% else %}<meta name="robots" content="index, follow">{% endif %}
+  {% if canonical %}<link rel="canonical" href="{{ canonical }}">{% endif %}
+  <meta name="generator" content="Cinder Peaks site builder {{ site.site_version }}">
+  <meta property="og:site_name" content="{{ site.org.name }}">
+  <meta property="og:title" content="{{ page_title or site.org.name }}">
+  <meta property="og:type" content="website">
+  {% if canonical %}<meta property="og:url" content="{{ canonical }}">{% endif %}
+  <meta property="og:image" content="{{ site.base_url }}assets/img/social-card.png">
+  <link rel="icon" type="image/png" href="{{ asset('img/favicon-32.png') }}">
+  <link rel="apple-touch-icon" href="{{ asset('img/favicon.png') }}">
+  <link rel="stylesheet" href="{{ asset('css/site.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="utility-bar">
+    <div class="container utility-inner">
+      <span>Serving {{ site.org.service_area_summary }}</span>
+      <span class="utility-links">
+        <a href="tel:{{ site.contact.phone_href }}">{{ site.contact.phone }}</a>
+        <a href="mailto:{{ site.contact.grants_email }}">{{ site.contact.grants_email }}</a>
+      </span>
+    </div>
+  </div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="{{ url('') }}" aria-label="{{ site.org.name }} home">
+        {{ m.logo_mark(44) }}
+        <span class="brand-text"><span class="brand-name">Cinder Peaks</span><span class="brand-sub">Community Foundation</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle-bars" aria-hidden="true"></span><span class="nav-toggle-label">Menu</span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Main">
+        <ul class="nav-list">
+        {% for item in nav %}
+          {% set active = (item.href and page_path.startswith(item.href)) or (not item.href and page_path == '') %}
+          {% if item.children or item.focus_menu %}
+          <li class="nav-item has-dropdown{% if active %} is-active{% endif %}">
+            <div class="nav-top">
+              <a href="{{ url(item.href) }}" class="nav-link"{% if active %} aria-current="{{ 'page' if page_path == item.href else 'true' }}"{% endif %}>{{ item.title }}</a>
+              <button class="submenu-toggle" type="button" aria-expanded="false" aria-label="Show {{ item.title }} menu"><span aria-hidden="true"></span></button>
+            </div>
+            {% if item.focus_menu %}
+            <div class="dropdown dropdown-wide">
+              {% for grp in focus.groups %}
+              <div class="dropdown-col">
+                <p class="dropdown-heading">{{ grp.title }}</p>
+                <ul>
+                {% if loop.first %}<li><a href="{{ url('focus-areas/') }}">All Focus Areas</a></li>{% endif %}
+                {% for a in focus.areas if a.group == grp.id %}
+                  <li><a href="{{ url('focus-areas/' ~ a.id ~ '/') }}">{{ a.title }}</a></li>
+                {% endfor %}
+                </ul>
+              </div>
+              {% endfor %}
+            </div>
+            {% elif item.grants_menu %}
+            <div class="dropdown dropdown-wide">
+              <div class="dropdown-col">
+                <p class="dropdown-heading">Grant programs</p>
+                <ul>
+                {% for g in grants %}
+                  <li><a href="{{ url('grants/' ~ g.id ~ '/') }}">{{ g.title }}</a></li>
+                {% endfor %}
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <p class="dropdown-heading">For applicants</p>
+                <ul>
+                {% for c in item.children %}
+                  <li><a href="{{ url(c.href) }}">{{ c.title }}</a></li>
+                {% endfor %}
+                </ul>
+              </div>
+            </div>
+            {% else %}
+            <div class="dropdown">
+              <ul>
+              {% for c in item.children %}
+                <li><a href="{{ url(c.href) }}">{{ c.title }}</a></li>
+              {% endfor %}
+              </ul>
+            </div>
+            {% endif %}
+          </li>
+          {% else %}
+          <li class="nav-item{% if active %} is-active{% endif %}"><div class="nav-top"><a href="{{ url(item.href) }}" class="nav-link"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a></div></li>
+          {% endif %}
+        {% endfor %}
+        </ul>
+        <a class="btn btn-accent nav-cta" href="{{ url('grants/') }}">Apply for a Grant</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {% block main %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand brand-footer" href="{{ url('') }}">
+          {{ m.logo_mark(40) }}
+          <span class="brand-text"><span class="brand-name">Cinder Peaks</span><span class="brand-sub">Community Foundation</span></span>
+        </a>
+        <p>{{ site.org.mission }}</p>
+      </div>
+      <div>
+        <h2 class="footer-heading">Grants</h2>
+        <ul class="footer-links">
+          <li><a href="{{ url('grants/') }}">Grant Opportunities</a></li>
+          <li><a href="{{ url('grants/how-to-apply/') }}">How to Apply</a></li>
+          <li><a href="{{ url('grants/calendar/') }}">Grants Calendar</a></li>
+          <li><a href="{{ url('grants/reporting/') }}">Reporting Requirements</a></li>
+          <li><a href="{{ url('grants/faq/') }}">Grant Seeker FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer-heading">Foundation</h2>
+        <ul class="footer-links">
+          <li><a href="{{ url('about/') }}">About Us</a></li>
+          <li><a href="{{ url('about/our-people/') }}">Our People</a></li>
+          <li><a href="{{ url('focus-areas/') }}">Focus Areas</a></li>
+          <li><a href="{{ url('resources/') }}">Resources &amp; Reports</a></li>
+          <li><a href="{{ url('resources/annual-impact-reports/') }}">Financials &amp; Reports</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer-heading">Contact</h2>
+        <address class="footer-address">
+          {{ site.contact.street }}<br>{{ site.contact.city_state_zip }}<br>
+          Mailing: {{ site.contact.mailing }}, {{ site.contact.mailing_city_state_zip }}<br>
+          <a href="tel:{{ site.contact.phone_href }}">{{ site.contact.phone }}</a><br>
+          <a href="mailto:{{ site.contact.general_email }}">{{ site.contact.general_email }}</a>
+        </address>
+        <a class="footer-contact-link" href="{{ url('contact/') }}">All contact information</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 {{ site.org.name }}. All rights reserved.</p>
+      <ul class="footer-legal">
+        <li><a href="{{ url('privacy-policy/') }}">Privacy Policy</a></li>
+        <li><a href="{{ url('terms-of-use/') }}">Terms of Use</a></li>
+        <li><a href="{{ url('site-map/') }}">Site Map</a></li>
+      </ul>
+      <p class="demo-note">{{ site.org.name }} is a fictional organization. This website was created for demonstration and testing; its programs, people, and contact details are not real. Site {{ site.version_label|lower }}.</p>
+    </div>
+  </footer>
+  <script src="{{ asset('js/site.js') }}" defer></script>
+</body>
+</html>

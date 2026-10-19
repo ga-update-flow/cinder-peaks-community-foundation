@@ -1,0 +1,28 @@
+[
+  {"title": "Home", "href": ""},
+  {"title": "About Us", "href": "about/", "children": [
+    {"title": "About the Foundation", "href": "about/"},
+    {"title": "Our People", "href": "about/our-people/"},
+    {"title": "Our Service Area", "href": "about/service-area/"},
+    {"title": "News & Stories", "href": "about/news/"},
+    {"title": "Financials & Reports", "href": "resources/annual-impact-reports/"}
+  ]},
+  {"title": "Focus Areas", "href": "focus-areas/", "focus_menu": true},
+  {"title": "Grants", "href": "grants/", "grants_menu": true, "children": [
+    {"title": "All Grant Opportunities", "href": "grants/"},
+    {"title": "How to Apply", "href": "grants/how-to-apply/"},
+    {"title": "Eligibility & Policies", "href": "grants/eligibility-policies/"},
+    {"title": "Grants Calendar", "href": "grants/calendar/"},
+    {"title": "Reporting Requirements", "href": "grants/reporting/"},
+    {"title": "Grant Seeker FAQ", "href": "grants/faq/"}
+  ]},
+  {"title": "Resources & Reports", "href": "resources/", "children": [
+    {"title": "Document Library", "href": "resources/"},
+    {"title": "Grant Guidelines & RFPs", "href": "resources/guidelines-rfps/"},
+    {"title": "Application Templates", "href": "resources/application-templates/"},
+    {"title": "Reporting Forms", "href": "resources/reporting-forms/"},
+    {"title": "Annual & Impact Reports", "href": "resources/annual-impact-reports/"},
+    {"title": "Nonprofit Learning Hub", "href": "resources/nonprofit-learning-hub/"}
+  ]},
+  {"title": "Contact", "href": "contact/"}
+]

@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% block description %}Eligibility requirements and grant policies for {{ site.org.name }} grant programs.{% endblock %}
+{% block main %}
+{{ m.page_hero("Eligibility & Grant Policies", "General requirements that apply to all competitive grant programs. Each program page lists additional eligibility criteria.", [("Grants", "grants/"), ("Eligibility & Policies", "")], "Grants") }}
+<div class="container prose-layout">
+  <div class="prose">
+    <h2 id="who">Who may apply</h2>
+    <ul class="check-list">
+      <li>Organizations recognized as tax-exempt under Section 501(c)(3) of the Internal Revenue Code</li>
+      <li>Public and governmental agencies, including public schools, libraries, and tribal colleges</li>
+      <li>Federally recognized tribes, tribal programs, Navajo Nation chapters, and Hopi villages</li>
+      <li>Projects with a qualified fiscal sponsor that is a 501(c)(3) organization</li>
+    </ul>
+
+    <h2 id="geography">Geographic eligibility</h2>
+    <p>Most programs serve <a href="{{ url('about/service-area/') }}">Coconino, Yavapai, Navajo, and Apache counties</a>. Three community funds accept applications from anywhere in Arizona.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Program</th><th scope="col">Geographic eligibility</th></tr></thead>
+        <tbody>
+        {% for g in grants %}
+          <tr><th scope="row"><a href="{{ url('grants/' ~ g.id ~ '/') }}">{{ g.title }}</a></th><td>{{ g.geography.summary }}</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="limits">Application limits</h2>
+    <ul>
+      <li>Organizations may submit one Community Impact Grant application per calendar year, in either the Spring or Fall cycle.</li>
+      <li>Organizations that received a Community Impact Grant in 2026 may next apply in 2028. They remain eligible for the community funds, Capacity Grants, the Rapid Response Fund, and the Shared Giving Catalog.</li>
+      <li>Applying to a community fund (First Steps, Plateau, Prism, or Rising Roots) does not affect Community Impact eligibility.</li>
+    </ul>
+
+    <h2 id="not-funded">What we do not fund</h2>
+    <ul class="x-list">
+      <li>Grants to individuals, scholarships, or private school tuition (scholarships are offered through separate donor funds)</li>
+      <li>Religious activities, although faith-based organizations providing secular services open to all are eligible</li>
+      <li>Capital campaigns, endowments, or debt reduction</li>
+      <li>Lobbying or partisan political activity</li>
+      <li>Fundraising events, sponsorships, and advertising</li>
+    </ul>
+
+    <h2 id="nondiscrimination">Nondiscrimination</h2>
+    <p>The Foundation makes grants without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, tribal affiliation, age, disability, or veteran status. Grantees must not discriminate in hiring, board membership, or the delivery of services.</p>
+
+    <h2 id="fiscal-sponsors">Fiscal sponsorship</h2>
+    <p>Projects without their own 501(c)(3) status may apply through a fiscal sponsor. Submit a signed letter using the <a href="{{ doc_href('fiscal-sponsor-letter-template') }}">Fiscal Sponsor Letter Template</a>. Award tiers for general operating grants are based on the project's budget.</p>
+
+    <h2 id="conflicts">Conflicts of interest</h2>
+    <p>Board members, committee members, and staff who are affiliated with an applicant do not participate in reviewing or voting on that application.</p>
+  </div>
+  <aside class="prose-aside">
+    <div class="summary-card">
+      <h2>Checklist</h2>
+      <p>Confirm your eligibility in five minutes.</p>
+      <a class="btn btn-accent btn-block" href="{{ doc_href('grant-eligibility-checklist') }}">Grant Eligibility Checklist (PDF)</a>
+    </div>
+  </aside>
+</div>
+{% endblock %}

@@ -1,0 +1,198 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% block description %}{{ grant.summary }}{% endblock %}
+{% block main %}
+{% set g = grant %}
+<section class="page-hero grant-hero">
+  <div class="container">
+    {{ m.breadcrumb([("Grants", "grants/"), (g.title, "")]) }}
+    <p class="eyebrow">{{ g.program_type }}</p>
+    <h1>{{ g.title }}</h1>
+    <p class="lead">{{ g.summary }}</p>
+    <p class="status-pill status-pill-lg">{{ g.status }}</p>
+  </div>
+</section>
+
+<div class="container grant-layout">
+  <article class="grant-main" data-opportunity-id="{{ g.id }}">
+    <nav class="on-this-page" aria-label="On this page">
+      <p>On this page</p>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#focus-impact">Focus &amp; impact areas</a></li>
+        <li><a href="#eligibility">Eligibility</a></li>
+        <li><a href="#funding">Funding</a></li>
+        <li><a href="#key-dates">Key dates</a></li>
+        <li><a href="#how-to-apply">How to apply</a></li>
+        <li><a href="#reporting">Reporting</a></li>
+        <li><a href="#documents">Documents</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section id="overview" class="grant-section" data-field="description">
+      <h2>Program description</h2>
+      {% for p in g.description %}<p>{{ p }}</p>{% endfor %}
+    </section>
+
+    <section id="focus-impact" class="grant-section" data-field="focus-impact-areas">
+      <h2>Focus and impact areas</h2>
+      <p class="tag-row">
+        {% for f in g.focus_areas %}<a class="tag" href="{{ url('focus-areas/' ~ f ~ '/') }}">{{ focus_by_id[f].title }}</a>{% endfor %}
+      </p>
+      <ul class="check-list">
+        {% for i in g.impact_areas %}<li>{{ i }}</li>{% endfor %}
+      </ul>
+    </section>
+
+    <section id="populations" class="grant-section" data-field="population-served">
+      <h2>Population served</h2>
+      <ul class="check-list">
+        {% for p in g.populations_served %}<li>{{ p }}</li>{% endfor %}
+      </ul>
+    </section>
+
+    <section id="eligibility" class="grant-section" data-field="eligibility">
+      <h2>Eligibility</h2>
+      <h3 id="geographic-eligibility">Geographic eligibility</h3>
+      <p data-field="geographic-eligibility">{{ g.geography.summary }}</p>
+      <h3>Who may apply</h3>
+      <ul class="check-list">
+        {% for e in g.eligibility %}<li>{{ e }}</li>{% endfor %}
+      </ul>
+      {% if g.not_eligible %}
+      <h3>What we do not fund</h3>
+      <ul class="x-list">
+        {% for e in g.not_eligible %}<li>{{ e }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+    </section>
+
+    <section id="funding" class="grant-section" data-field="funding-amount">
+      <h2>Funding</h2>
+      <dl class="fact-table">
+        <div><dt>Funding amount</dt><dd>{{ g.funding.summary }}</dd></div>
+        <div><dt>Type of support</dt><dd>{{ g.funding.type }}</dd></div>
+        {% if g.funding.term %}<div><dt>Grant term</dt><dd>{{ g.funding.term }}</dd></div>{% endif %}
+        {% if g.funding.total_available %}<div><dt>Total available</dt><dd>{{ g.funding.total_available }}</dd></div>{% endif %}
+      </dl>
+      {% if g.funding.tiers %}
+      <h3>Award amounts by budget size</h3>
+      <div class="table-wrap">
+        <table>
+          <caption class="visually-hidden">Grant award by annual operating budget</caption>
+          <thead><tr><th scope="col">Annual operating budget</th><th scope="col">Grant award</th></tr></thead>
+          <tbody>
+          {% for t in g.funding.tiers %}<tr><td>{{ t.budget }}</td><td>{{ t.award }}</td></tr>{% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% endif %}
+    </section>
+
+    <section id="key-dates" class="grant-section" data-field="deadlines">
+      <h2>Key dates</h2>
+      <div class="table-wrap">
+        <table class="dates-table">
+          <caption class="visually-hidden">Key dates for {{ g.title }}</caption>
+          <tbody>
+          {% for label, value in key_dates(g) %}
+            <tr{% if 'deadline' in label|lower %} class="is-deadline"{% endif %}><th scope="row">{{ label }}</th><td>{{ value }}</td></tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% if g.dates.deadline_time %}<p class="note">All deadlines are {{ g.dates.deadline_time }} (Arizona time). Arizona does not observe daylight saving time.</p>{% endif %}
+    </section>
+
+    <section id="how-to-apply" class="grant-section" data-field="how-to-apply">
+      <h2>How to apply</h2>
+      <p>{{ g.how_to_apply.intro }}</p>
+      <ol class="step-list">
+        {% for s in g.how_to_apply.steps %}<li><strong>{{ s.title }}.</strong> {{ s.text }}</li>{% endfor %}
+      </ol>
+      <p>General instructions for the CPCF Grant Portal are on the <a href="{{ url('grants/how-to-apply/') }}">How to Apply</a> page.</p>
+    </section>
+
+    {% if g.review_criteria %}
+    <section id="review-criteria" class="grant-section">
+      <h2>Review criteria</h2>
+      <ul class="check-list">
+        {% for c in g.review_criteria %}<li>{{ c }}</li>{% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
+    <section id="reporting" class="grant-section" data-field="reporting">
+      <h2>Reporting requirements</h2>
+      <p>{{ g.reporting.summary }}</p>
+      {% if g.reporting.get('items') %}
+      <ul class="check-list">
+        {% for i in g.reporting.get('items') %}<li>{{ i }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+      {% if g.reporting.due %}<p><strong>Due:</strong> {{ g.reporting.due }}.</p>{% endif %}
+      {% if g.reporting.forms %}
+      <p>Reporting form{{ 's' if g.reporting.forms|length > 1 }}:
+        {% for f in g.reporting.forms %}<a href="{{ doc_href(f) }}">{{ docs_by_id[f].title }} (PDF)</a>{% if not loop.last %}, {% endif %}{% endfor %}
+      </p>
+      {% endif %}
+    </section>
+
+    <section id="documents" class="grant-section" data-field="documents">
+      <h2>Guidelines, templates, and supporting documents</h2>
+      {% set groups = [("guidelines", "Guidelines and RFP"), ("templates", "Application templates"), ("reporting", "Reporting forms"), ("reports", "Related reports"), ("learning", "Learning resources")] %}
+      {% for cat, label in groups %}
+        {% set ds = g.documents|map('extract', docs_by_id)|selectattr('category', 'equalto', cat)|list %}
+        {% if ds %}
+        <h3>{{ label }}</h3>
+        <ul class="doc-list">{% for d in ds %}{{ m.doc_item(d, False) }}{% endfor %}</ul>
+        {% endif %}
+      {% endfor %}
+    </section>
+
+    {% if g.faq %}
+    <section id="faq" class="grant-section">
+      <h2>Frequently asked questions</h2>
+      {% for f in g.faq %}
+      <h3 class="faq-q">{{ f.q }}</h3>
+      <p>{{ f.a }}</p>
+      {% endfor %}
+    </section>
+    {% endif %}
+
+    <section id="contact" class="grant-section" data-field="contact">
+      <h2>Contact</h2>
+      <p>Questions about the {{ g.title }}? Contact <strong>{{ g.contact.name }}</strong>, {{ g.contact.title }}, at <a href="mailto:{{ g.contact.email }}">{{ g.contact.email }}</a> or {{ g.contact.phone }}.</p>
+    </section>
+  </article>
+
+  <aside class="grant-aside" aria-label="Program summary">
+    <div class="summary-card">
+      <h2>At a glance</h2>
+      <dl>
+        <div><dt>Funding</dt><dd>{{ g.funding.summary }}</dd></div>
+        {% if g.dates.loi_deadline %}<div><dt>LOI deadline</dt><dd>{{ g.dates.loi_deadline|longdate }}</dd></div>{% endif %}
+        {% if g.dates.application_deadline %}<div><dt>{{ 'Full application deadline' if g.dates.loi_deadline else 'Application deadline' }}</dt><dd>{{ g.dates.application_deadline|longdate }}</dd></div>{% endif %}
+        {% if g.dates.rolling %}<div><dt>Deadline</dt><dd>Rolling; reviewed year-round</dd></div>{% endif %}
+        <div><dt>Geography</dt><dd>{{ g.geography.areas|join('; ') }}</dd></div>
+        <div><dt>Focus areas</dt><dd>{% for f in g.focus_areas %}{{ focus_by_id[f].title }}{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>
+      </dl>
+      {% set gl = g.documents|map('extract', docs_by_id)|selectattr('category', 'equalto', 'guidelines')|first %}
+      {% if gl %}<a class="btn btn-accent btn-block" href="{{ doc_href(gl.id) }}">Download {{ 'RFP' if 'Request for Proposals' in gl.title else 'guidelines' }} (PDF)</a>{% endif %}
+    </div>
+    {{ m.contact_card(g.contact) }}
+  </aside>
+</div>
+
+<section class="section section-sand">
+  <div class="container">
+    <h2>Other grant programs</h2>
+    <ul class="link-grid">
+      {% for o in grants if o.id != g.id %}
+      <li><a href="{{ url('grants/' ~ o.id ~ '/') }}">{{ o.title }}</a><span>{{ o.status }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock %}

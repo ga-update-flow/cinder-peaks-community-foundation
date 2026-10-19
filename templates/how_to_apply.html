@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% block description %}How to apply for a grant from {{ site.org.name }}: the CPCF Grant Portal, letters of inquiry, required attachments, and timelines.{% endblock %}
+{% block main %}
+{{ m.page_hero("How to Apply", "Most programs accept applications through the CPCF Grant Portal. Some begin with a short letter of inquiry. This page explains each step and the documents you will need.", [("Grants", "grants/"), ("How to Apply", "")], "Grants") }}
+<div class="container prose-layout">
+  <div class="prose">
+    <h2 id="process">The application process</h2>
+    <ol class="step-list">
+      <li><strong>Choose a program.</strong> Compare programs on the <a href="{{ url('grants/') }}">Grant Opportunities</a> page and read the program's PDF guidelines or RFP.</li>
+      <li><strong>Confirm eligibility.</strong> Use the <a href="{{ doc_href('grant-eligibility-checklist') }}">Grant Eligibility Checklist</a> and read our <a href="{{ url('grants/eligibility-policies/') }}">eligibility and grant policies</a>.</li>
+      <li><strong>Talk with a program officer.</strong> We encourage a short call before you apply, especially if you are a first-time applicant.</li>
+      <li><strong>Prepare your materials.</strong> Download the templates listed for the program and draft your answers offline.</li>
+      <li><strong>Submit by the deadline.</strong> All deadlines are 5:00 p.m. Mountain Standard Time (Arizona time).</li>
+      <li><strong>Review and decision.</strong> Staff may request more information or schedule a site visit. Every applicant receives a decision by email.</li>
+    </ol>
+
+    <h2 id="two-stage">Single-stage and two-stage programs</h2>
+    <p>Single-stage programs ask for a complete application by one deadline. Two-stage programs begin with a two-page letter of inquiry (LOI); applicants whose letters best fit the program are invited to submit a full application.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Program</th><th scope="col">Process</th><th scope="col">How to submit</th></tr></thead>
+        <tbody>
+        {% for g in grants_sorted %}
+          <tr>
+            <th scope="row"><a href="{{ url('grants/' ~ g.id ~ '/') }}">{{ g.title }}</a></th>
+            <td>{% if g.dates.loi_deadline %}Two-stage: LOI due {{ g.dates.loi_deadline|date }}, invited full application due {{ g.dates.application_deadline|date }}{% elif g.dates.rolling %}Rolling requests{% else %}Single-stage: application due {{ g.dates.application_deadline|date }}{% endif %}</td>
+            <td>{{ g.how_to_apply.intro }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="portal">Using the CPCF Grant Portal</h2>
+    <p>The CPCF Grant Portal is the Foundation's online application system. New applicants create an organization profile with the organization's legal name, address, executive director, and annual budget. Returning applicants sign in with their existing email address and confirm that their profile is current before starting a new application.</p>
+    <p>The portal saves your work automatically, so you can return to an application before the deadline. If you need help creating an account or resetting a password, contact our Grants Manager, Theo Lindqvist, at <a href="mailto:tlindqvist@cinderpeakscf.org">tlindqvist@cinderpeakscf.org</a> or (928) 555-0147 ext. 119. Applicants who are unable to use the portal may request a paper or emailed application.</p>
+
+    <h2 id="attachments">Common attachments</h2>
+    <ul class="check-list">
+      <li>Current fiscal year operating budget approved by your board</li>
+      <li>Most recent financial statements (audit, review, or board-approved statements)</li>
+      <li>List of board members and their affiliations</li>
+      <li>Project budget for project and program grants, using the <a href="{{ doc_href('grant-project-budget-template') }}">Grant Project Budget Template</a></li>
+      <li>Fiscal sponsor letter, if applicable, using the <a href="{{ doc_href('fiscal-sponsor-letter-template') }}">Fiscal Sponsor Letter Template</a></li>
+    </ul>
+
+    <h2 id="templates">Application templates</h2>
+    <ul class="doc-list">
+      {% for d in documents if d.category == 'templates' %}{{ m.doc_item(d) }}{% endfor %}
+    </ul>
+
+    <h2 id="accessibility">Language and accessibility</h2>
+    <p>We accept letters of inquiry for the Plateau Indigenous Communities Fund in Indigenous languages and oral formats, and Rising Roots applicants may submit a video. If you need an accommodation for any program, contact us at least one week before the deadline.</p>
+  </div>
+  <aside class="prose-aside">
+    {{ m.contact_card({"name": "Marcus Tsosie", "title": "Vice President, Grants & Community Impact", "email": "mtsosie@cinderpeakscf.org", "phone": "(928) 555-0147 ext. 112"}, "Grants questions") }}
+    {{ m.contact_card({"name": "Theo Lindqvist", "title": "Grants Manager", "email": "tlindqvist@cinderpeakscf.org", "phone": "(928) 555-0147 ext. 119"}, "Portal help") }}
+  </aside>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% block main %}
+{{ m.page_hero("Terms of Use", None, [("Terms of Use", "")]) }}
+<div class="container prose section">
+  <p>Effective October 1, 2026.</p>
+  <h2>Use of content</h2>
+  <p>Nonprofits and other grant applicants may download, print, and complete the templates and forms on this website for the purpose of applying for or reporting on Foundation grants.</p>
+  <h2>Accuracy</h2>
+  <p>Program guidelines may change between grant cycles. The current program page and PDF guidelines are the authoritative source for eligibility, deadlines, and award amounts.</p>
+  <h2>Demonstration website</h2>
+  <p>{{ site.org.name }} is a fictional organization. This website and its documents were created for demonstration and software testing. Names, programs, figures, addresses, telephone numbers, and email addresses are invented and do not refer to any real organization or person.</p>
+</div>
+{% endblock %}

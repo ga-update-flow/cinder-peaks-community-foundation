@@ -1,0 +1,90 @@
+{% macro logo_mark(size) %}<svg class="logo-mark" width="{{ size }}" height="{{ size }}" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="78" cy="24" r="9" fill="#D9A441"/><polygon points="4,84 40,22 76,84" fill="#1F2A2E"/><polygon points="38,84 60,46 72,46 96,84" fill="#A8432A"/><rect x="4" y="84" width="92" height="5" rx="1" fill="#2F5D50"/></svg>{% endmacro %}
+
+{% macro icon(name) %}<svg class="icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+{% if name == 'heart' %}<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>
+{% elif name == 'briefcase' %}<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M3 13h18"/>
+{% elif name == 'book' %}<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M8 7h7"/>
+{% elif name == 'leaf' %}<path d="M5 19C5 10 11 5 20 4c0 9-5 15-14 15z"/><path d="M5 19l8-8"/>
+{% elif name == 'palette' %}<path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2s-1-1.5-1-2.5S14 15 15 15h2a4 4 0 0 0 4-4c0-4.4-4-8-9-8z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/>
+{% elif name == 'paw' %}<circle cx="6" cy="10" r="1.8"/><circle cx="10" cy="6" r="1.8"/><circle cx="14" cy="6" r="1.8"/><circle cx="18" cy="10" r="1.8"/><path d="M8 17c0-3 2-5 4-5s4 2 4 5c0 2-2 3-4 2-2 1-4 0-4-2z"/>
+{% elif name == 'sprout' %}<path d="M12 21v-9M12 12c0-4-3-6-7-6 0 4 3 6 7 6zM12 12c0-3 2-6 7-6 0 4-3 6-7 6z"/>
+{% elif name == 'mesa' %}<path d="M2 19h20M4 19l3-8h10l3 8M9 11l1-3h4l1 3"/>
+{% elif name == 'prism' %}<path d="M12 3l9 16H3z"/><path d="M12 3v16M7.5 11h9"/>
+{% elif name == 'sun' %}<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6L19 19M5 19l1.4-1.4M17.6 6.4L19 5"/>
+{% elif name == 'doc' %}<path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/>
+{% elif name == 'calendar' %}<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/>
+{% elif name == 'pin' %}<path d="M12 21s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/>
+{% elif name == 'mail' %}<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>
+{% elif name == 'phone' %}<path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>
+{% else %}<circle cx="12" cy="12" r="8"/>{% endif %}
+</svg>{% endmacro %}
+
+{% macro breadcrumb(items) %}
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="{{ url('') }}">Home</a></li>
+    {% for label, href in items %}
+      {% if loop.last %}<li><span aria-current="page">{{ label }}</span></li>
+      {% else %}<li><a href="{{ url(href) }}">{{ label }}</a></li>{% endif %}
+    {% endfor %}
+  </ol>
+</nav>
+{% endmacro %}
+
+{% macro page_hero(title, lead=None, crumbs=[], eyebrow=None) %}
+<section class="page-hero">
+  <div class="container">
+    {{ breadcrumb(crumbs) }}
+    {% if eyebrow %}<p class="eyebrow">{{ eyebrow }}</p>{% endif %}
+    <h1>{{ title }}</h1>
+    {% if lead %}<p class="lead">{{ lead }}</p>{% endif %}
+  </div>
+</section>
+{% endmacro %}
+
+{% macro grant_card(g) %}
+{% set nd = next_deadline(g) %}
+<article class="card grant-card">
+  <p class="card-kicker">{{ g.program_type }}</p>
+  <h3 class="card-title"><a href="{{ url('grants/' ~ g.id ~ '/') }}">{{ g.title }}</a></h3>
+  <p class="status-pill">{{ g.status }}</p>
+  <p>{{ g.summary }}</p>
+  <dl class="card-facts">
+    <div><dt>Funding</dt><dd>{{ g.funding.summary }}</dd></div>
+    {% if g.dates.loi_deadline %}<div><dt>LOI deadline</dt><dd>{{ g.dates.loi_deadline|date }}</dd></div>{% endif %}
+    {% if g.dates.application_deadline %}<div><dt>{{ 'Full application' if g.dates.loi_deadline else 'Application deadline' }}</dt><dd>{{ g.dates.application_deadline|date }}</dd></div>{% endif %}
+    {% if g.dates.rolling %}<div><dt>Deadline</dt><dd>Rolling, reviewed year-round</dd></div>{% endif %}
+    <div><dt>Geography</dt><dd>{{ g.geography.areas|join(', ') }}</dd></div>
+  </dl>
+  <a class="card-link" href="{{ url('grants/' ~ g.id ~ '/') }}">View program details<span class="visually-hidden"> for {{ g.title }}</span></a>
+</article>
+{% endmacro %}
+
+{% macro doc_item(d, show_programs=True) %}
+<li class="doc-item">
+  <span class="doc-icon">{{ icon('doc') }}</span>
+  <div class="doc-body">
+    <h3 class="doc-title"><a href="{{ doc_href(d.id, 'pdf') }}">{{ d.title }}</a></h3>
+    <p class="doc-desc">{{ d.description }}</p>
+    {% if show_programs and d.grants %}
+    <p class="doc-programs">Used for:
+      {% for gid in d.grants %}<a href="{{ url('grants/' ~ gid ~ '/') }}">{{ grants_by_id[gid].short_title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+    </p>
+    {% endif %}
+    <p class="doc-formats">
+      <a class="doc-format" href="{{ doc_href(d.id, 'pdf') }}">PDF <span class="doc-size">{{ file_size(d.paths.pdf) }}</span></a>
+      {% if 'docx' in d.formats %}<a class="doc-format" href="{{ doc_href(d.id, 'docx') }}" download>Word (.docx) <span class="doc-size">{{ file_size(d.paths.docx) }}</span></a>{% endif %}
+    </p>
+  </div>
+</li>
+{% endmacro %}
+
+{% macro contact_card(c, heading="Program contact") %}
+<div class="contact-card">
+  <h3>{{ heading }}</h3>
+  <p class="contact-name">{{ c.name }}</p>
+  <p class="contact-title">{{ c.title }}</p>
+  <p><a href="mailto:{{ c.email }}">{{ c.email }}</a></p>
+  <p>{{ c.phone }}</p>
+</div>
+{% endmacro %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% block description %}{{ site.org.name }} serves Coconino, Yavapai, Navajo, and Apache counties in northern Arizona.{% endblock %}
+{% block main %}
+{{ m.page_hero("Our Service Area", "From the Grand Canyon to the White Mountains, our region covers more than 50,000 square miles of northern Arizona.", [("About Us", "about/"), ("Our Service Area", "")], "About Us") }}
+<section class="section">
+  <div class="container">
+    <div class="county-grid">
+      <article class="card">
+        <h2 class="card-title">Coconino County</h2>
+        <p>Arizona's largest county and home to our Flagstaff office. Communities include Flagstaff, Williams, Page, Fredonia, Tusayan, and Tuba City, along with portions of the Navajo Nation and the Hopi, Havasupai, Hualapai, Kaibab Paiute, and San Juan Southern Paiute communities.</p>
+      </article>
+      <article class="card">
+        <h2 class="card-title">Yavapai County</h2>
+        <p>The Verde Valley and central highlands, including Prescott, Prescott Valley, Chino Valley, Cottonwood, Sedona, Camp Verde, and the Yavapai-Apache Nation and Yavapai-Prescott Indian Tribe.</p>
+      </article>
+      <article class="card">
+        <h2 class="card-title">Navajo County</h2>
+        <p>From the Navajo Nation and Hopi Reservation in the north to the Mogollon Rim, including Winslow, Holbrook, Snowflake, Show Low, Pinetop-Lakeside, and Kayenta, and lands of the White Mountain Apache Tribe.</p>
+      </article>
+      <article class="card">
+        <h2 class="card-title">Apache County</h2>
+        <p>Arizona's eastern edge, including Chinle, Ganado, Window Rock, St. Johns, Springerville, and Eagar. Most of the county lies within the Navajo Nation.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="section section-sand">
+  <div class="container prose">
+    <h2>Statewide funds</h2>
+    <p>Three community funds accept applications from organizations anywhere in Arizona: the <a href="{{ url('grants/prism-fund-lgbtq/') }}">Prism Fund for LGBTQ+ Arizonans</a>, the <a href="{{ url('grants/rising-roots-black-futures-fund/') }}">Rising Roots Black Futures Fund</a>, and the <a href="{{ url('grants/plateau-indigenous-communities-fund/') }}">Plateau Indigenous Communities Fund</a>.</p>
+    <h2>Our office</h2>
+    <p>{{ site.contact.street }}, {{ site.contact.city_state_zip }}. {{ site.contact.parking }}</p>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% block description %}Document library: grant guidelines, RFPs, application templates, reporting forms, annual and impact reports from {{ site.org.name }}.{% endblock %}
+{% block main %}
+{{ m.page_hero("Resources & Reports", "Our complete document library. Every guideline, RFP, template, reporting form, and report is listed here and on the related program page.", [("Resources & Reports", "")], "Document Library") }}
+<section class="section section-tight">
+  <div class="container">
+    <nav class="category-nav" aria-label="Document categories">
+      <ul>
+        {% for c in categories.values() %}<li><a href="{{ url('resources/' ~ c.slug ~ '/') }}">{{ c.title }} <span>({{ documents|selectattr('category', 'equalto', c.id)|list|length }})</span></a></li>{% endfor %}
+      </ul>
+    </nav>
+  </div>
+</section>
+{% for c in categories.values() %}
+<section class="section{% if loop.index is even %} section-sand{% endif %}" id="{{ c.slug }}">
+  <div class="container">
+    <div class="section-head">
+      <h2><a href="{{ url('resources/' ~ c.slug ~ '/') }}">{{ c.title }}</a></h2>
+      <p>{{ c.intro }}</p>
+    </div>
+    <ul class="doc-list doc-grid">
+      {% for d in documents if d.category == c.id %}{{ m.doc_item(d) }}{% endfor %}
+    </ul>
+  </div>
+</section>
+{% endfor %}
+{% endblock %}

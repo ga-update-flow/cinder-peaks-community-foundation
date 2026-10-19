@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% block description %}Funding priorities of {{ site.org.name }}: ten focus areas with goals, populations served, and related grant programs.{% endblock %}
+{% block main %}
+{{ m.page_hero("Focus Areas", "Our funding priorities reflect what we hear from communities across northern Arizona. Each focus area has goals, priority populations, and related grant programs.", [("Focus Areas", "")], "Focus Areas") }}
+{% for grp in focus.groups %}
+<section class="section{% if loop.index is even %} section-sand{% endif %}">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="{{ grp.id }}">{{ grp.title }}</h2>
+      <p>{{ grp.intro }}</p>
+    </div>
+    <div class="focus-list">
+      {% for a in focus.areas if a.group == grp.id %}
+      <article class="focus-card" id="{{ a.id }}">
+        <span class="focus-icon">{{ m.icon(a.icon) }}</span>
+        <div>
+          <h3><a href="{{ url('focus-areas/' ~ a.id ~ '/') }}">{{ a.title }}</a></h3>
+          <p>{{ a.summary }}</p>
+          <p class="focus-grants">Grant programs:
+            {% for gid in a.grants %}<a href="{{ url('grants/' ~ gid ~ '/') }}">{{ grants_by_id[gid].title }}</a>{% if not loop.last %}; {% endif %}{% endfor %}
+          </p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endfor %}
+{% endblock %}

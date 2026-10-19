@@ -1,0 +1,107 @@
+{
+  "id": "community-impact-grants-spring",
+  "order": 1,
+  "title": "Community Impact Grants: Spring Cycle",
+  "short_title": "Community Impact (Spring)",
+  "program_type": "Competitive general operating grant",
+  "status": "Opens February 1, 2027",
+  "summary": "Unrestricted general operating support for nonprofits working in health, human services, and civic and economic opportunity across Coconino, Yavapai, Navajo, and Apache counties.",
+  "description": [
+    "The Spring Cycle of the Community Impact Grants program provides one-year, unrestricted general operating support to organizations meeting basic needs and expanding economic opportunity in northern Arizona. Unrestricted funding lets organizations put dollars where they are needed most, whether that is staff salaries, rent, or a new program.",
+    "Award amounts are set by the applicant's annual operating budget, so organizations do not need to request a specific amount. The Foundation expects to award approximately $650,000 to 45 to 55 organizations in the 2027 Spring Cycle."
+  ],
+  "focus_areas": ["health-human-services", "civic-economic-opportunity"],
+  "impact_areas": [
+    "Affordable and supportive housing and homelessness prevention",
+    "Food security and nutrition",
+    "Access to primary, dental, and behavioral health care",
+    "Services for older adults and caregivers",
+    "Safety and services for survivors of violence",
+    "Workforce training and support for hourly and seasonal workers",
+    "Financial coaching, benefits access, and small business development",
+    "Civic engagement, open government, and access to justice"
+  ],
+  "populations_served": [
+    "Low-income individuals and families",
+    "Older adults and family caregivers",
+    "People experiencing or at risk of homelessness",
+    "Hourly, seasonal, and low-wage workers",
+    "Rural and tribal community members"
+  ],
+  "geography": {
+    "summary": "Organizations must be located in or provide services to residents of Coconino, Yavapai, Navajo, or Apache counties, Arizona.",
+    "areas": ["Coconino County", "Yavapai County", "Navajo County", "Apache County"]
+  },
+  "eligibility": [
+    "Tax-exempt under Section 501(c)(3) of the Internal Revenue Code, a public or governmental agency, a federally recognized tribe or tribal program, or a project with a qualified fiscal sponsor",
+    "Located in or primarily serving residents of Coconino, Yavapai, Navajo, or Apache counties",
+    "In operation for at least two years with a board-approved annual budget",
+    "Non-discriminatory in hiring, board membership, and delivery of services",
+    "Work aligns with at least one Spring Cycle field of interest: Health & Human Services or Civic & Economic Opportunity",
+    "One Community Impact Grant application per organization per calendar year (Spring or Fall, not both)"
+  ],
+  "not_eligible": [
+    "Organizations that received a Community Impact Grant in calendar year 2026 (recipients of donor-advised grants remain eligible)",
+    "Individuals, scholarships, or tuition",
+    "Religious activities, although faith-based organizations providing secular services to all are eligible",
+    "Capital campaigns, endowments, or debt reduction",
+    "Lobbying or partisan political activity",
+    "Fundraising events and sponsorships"
+  ],
+  "funding": {
+    "type": "General operating support (unrestricted)",
+    "summary": "$5,000 to $25,000, determined by the organization's annual operating budget",
+    "min": 5000,
+    "max": 25000,
+    "term": "One year (July 1, 2027 – June 30, 2028)",
+    "total_available": "Approximately $650,000",
+    "tiers": [
+      {"budget": "Up to $75,000", "award": "$5,000"},
+      {"budget": "$75,001 – $200,000", "award": "$10,000"},
+      {"budget": "$200,001 – $750,000", "award": "$15,000"},
+      {"budget": "$750,001 and above", "award": "$25,000"}
+    ]
+  },
+  "dates": {
+    "opens": "2027-02-01",
+    "application_deadline": "2027-03-12",
+    "deadline_time": "5:00 p.m. MST",
+    "info_session": "Applicant information session (virtual): Thursday, February 4, 2027, 10:00 a.m. MST",
+    "decision": "Applicants notified by May 28, 2027",
+    "grant_period": "July 1, 2027 – June 30, 2028"
+  },
+  "how_to_apply": {
+    "intro": "Applications are submitted through the CPCF Grant Portal. Review the guidelines and use the application worksheet to prepare your answers before you begin.",
+    "steps": [
+      {"title": "Confirm eligibility", "text": "Review the 2027 Spring Cycle Guidelines and complete the Grant Eligibility Checklist. Contact the program officer if you are unsure whether your work fits."},
+      {"title": "Prepare your answers", "text": "Download the Community Impact Grant Application Worksheet to draft responses offline. The worksheet mirrors every question in the portal."},
+      {"title": "Create or update your portal account", "text": "New applicants create an organization profile in the CPCF Grant Portal. Returning applicants sign in and confirm that board, budget, and contact information are current."},
+      {"title": "Submit the application", "text": "Submit the online application, current-year operating budget, and most recent board-approved financial statements by 5:00 p.m. MST on March 12, 2027."},
+      {"title": "Site visit and decision", "text": "Program staff may schedule a phone call or site visit in April. All applicants are notified of decisions by May 28, 2027."}
+    ]
+  },
+  "review_criteria": [
+    "Alignment with Spring Cycle fields of interest",
+    "Clarity of the organization's mission and evidence of community need",
+    "Equity: the organization is led by, or meaningfully involves, the communities it serves",
+    "Collaboration with other organizations, agencies, or tribal programs",
+    "Financial health and sustainability",
+    "Completeness of the application"
+  ],
+  "reporting": {
+    "summary": "Grantees submit a brief Community Impact Story Report at the end of the grant period.",
+    "items": [
+      "A short narrative (300–500 words) or photo story describing how the grant strengthened the organization",
+      "Number of people served during the grant year",
+      "Permission indicating whether CPCF may share the story publicly"
+    ],
+    "due": "July 31, 2028",
+    "forms": ["community-impact-story-report-form"]
+  },
+  "documents": ["guidelines-community-impact-spring-2027", "community-impact-application-worksheet", "grant-eligibility-checklist", "fiscal-sponsor-letter-template", "community-impact-story-report-form"],
+  "contact": {"name": "Elena Brightwater", "title": "Senior Program Officer, Health & Economic Opportunity", "email": "ebrightwater@cinderpeakscf.org", "phone": "(928) 555-0147 ext. 115"},
+  "faq": [
+    {"q": "We received a Fall 2026 Community Impact Grant. Can we apply in Spring 2027?", "a": "No. Organizations that received a Community Impact Grant in calendar year 2026 must wait until the 2028 cycles. You may still apply to the Foundation's other funds and to the Shared Giving Catalog."},
+    {"q": "Can a fiscally sponsored project apply?", "a": "Yes. Include a signed letter from your fiscal sponsor using the Fiscal Sponsor Letter Template. The award tier is based on the project's budget, not the sponsor's."}
+  ]
+}

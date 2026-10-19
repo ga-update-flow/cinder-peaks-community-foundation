@@ -1,0 +1,77 @@
+{
+  "id": "rapid-response-resilience-fund",
+  "order": 8,
+  "title": "High Country Rapid Response & Resilience Fund",
+  "short_title": "Rapid Response Fund",
+  "program_type": "Rolling emergency grant",
+  "status": "Open year-round",
+  "summary": "Fast grants of up to $10,000 for nonprofits, tribal programs, and public agencies responding to wildfire, flooding, severe winter storms, and other emergencies in northern Arizona.",
+  "description": [
+    "The High Country Rapid Response & Resilience Fund was created after the 2010 Schultz Fire and post-fire flooding outside Flagstaff. It provides fast, flexible funding to organizations helping residents during and after emergencies, and supports preparedness projects between disasters.",
+    "Requests are reviewed on a rolling basis, and most decisions are made within ten business days. During a declared emergency the Foundation may open a dedicated response window with expedited review, announced on this page."
+  ],
+  "focus_areas": ["health-human-services", "environment-land"],
+  "impact_areas": [
+    "Emergency food, water, shelter, and supplies",
+    "Recovery support for displaced households",
+    "Post-fire flood mitigation and cleanup",
+    "Community preparedness, evacuation planning, and resilience projects",
+    "Mental health and wellness support after disasters"
+  ],
+  "populations_served": [
+    "Households affected by wildfire, flooding, or severe weather",
+    "Older adults and people with disabilities during emergencies",
+    "Rural and tribal communities with limited emergency services"
+  ],
+  "geography": {
+    "summary": "Organizations must be responding to emergencies affecting residents of Coconino, Yavapai, Navajo, or Apache counties, including tribal lands within those counties.",
+    "areas": ["Coconino County", "Yavapai County", "Navajo County", "Apache County"]
+  },
+  "eligibility": [
+    "Tax-exempt under Section 501(c)(3), a public agency, a federally recognized tribe, tribal chapter, or tribal program, or a project with a qualified fiscal sponsor",
+    "Responding to a specific emergency, or carrying out a preparedness project, in the four-county region",
+    "Able to spend grant funds within six months of award"
+  ],
+  "not_eligible": [
+    "Direct payments to individuals (the Foundation funds organizations that assist individuals)",
+    "Costs already covered by insurance or FEMA reimbursement",
+    "Permanent rebuilding of structures"
+  ],
+  "funding": {
+    "type": "Emergency response or preparedness project support",
+    "summary": "Up to $10,000; most awards range from $2,500 to $7,500",
+    "min": 1000,
+    "max": 10000,
+    "term": "Funds must be spent within six months of award"
+  },
+  "dates": {
+    "rolling": "Requests are accepted year-round and reviewed on a rolling basis. Most decisions are made within ten business days."
+  },
+  "how_to_apply": {
+    "intro": "The rapid response request is a two-page form designed to be completed in under an hour.",
+    "steps": [
+      {"title": "Call or email first", "text": "Contact the Vice President of Grants & Community Impact to describe the need. Staff will confirm whether the request fits the fund."},
+      {"title": "Complete the request form", "text": "Download and complete the Rapid Response Request Form. A budget table is included in the form."},
+      {"title": "Submit by email", "text": "Email the completed form to grants@cinderpeakscf.org with the subject line \"Rapid Response – [Organization Name]\"."},
+      {"title": "Decision and payment", "text": "Most decisions are made within ten business days. Approved grants are paid by direct deposit or check."}
+    ]
+  },
+  "review_criteria": [
+    "Urgency and severity of the need",
+    "The applicant's connection to the affected community",
+    "Ability to deliver help quickly",
+    "Coordination with emergency management, tribal, and relief agencies"
+  ],
+  "reporting": {
+    "summary": "Grantees submit a one-page Rapid Response Use of Funds Report within 60 days of spending the grant.",
+    "items": [
+      "How funds were used and how many people were helped",
+      "Photos, if available, with permission noted",
+      "Any remaining needs in the community"
+    ],
+    "due": "Within 60 days after funds are spent",
+    "forms": ["rapid-response-use-of-funds-report"]
+  },
+  "documents": ["guidelines-rapid-response-fund", "rapid-response-request-form", "rapid-response-use-of-funds-report"],
+  "contact": {"name": "Marcus Tsosie", "title": "Vice President, Grants & Community Impact", "email": "mtsosie@cinderpeakscf.org", "phone": "(928) 555-0147 ext. 112"}
+}

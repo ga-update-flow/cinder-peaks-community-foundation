@@ -1,0 +1,106 @@
+{
+  "id": "community-impact-grants-fall",
+  "order": 2,
+  "title": "Community Impact Grants: Fall Cycle",
+  "short_title": "Community Impact (Fall)",
+  "program_type": "Competitive general operating grant",
+  "status": "Opens July 12, 2027",
+  "summary": "Unrestricted general operating support for nonprofits working in education and youth, arts and culture, environment and land stewardship, and animal welfare in northern Arizona.",
+  "description": [
+    "The Fall Cycle of the Community Impact Grants program provides one-year, unrestricted general operating support to organizations that strengthen learning, creativity, and the natural environment across Coconino, Yavapai, Navajo, and Apache counties.",
+    "Award amounts are based on the applicant's annual operating budget. The Foundation awarded $612,500 to 46 organizations in the Fall 2026 cycle and expects a similar level of funding in 2027."
+  ],
+  "focus_areas": ["education-youth", "arts-culture", "environment-land", "animal-welfare"],
+  "impact_areas": [
+    "Early literacy, math, and school readiness",
+    "Out-of-school-time learning and mentoring",
+    "College and career pathways and opportunity youth re-engagement",
+    "Arts access for youth and families and preservation of cultural heritage",
+    "Watershed protection, forest restoration, and environmental justice",
+    "Local food systems and renewable energy",
+    "Spay and neuter access, humane education, and wildlife rehabilitation"
+  ],
+  "populations_served": [
+    "Children and youth ages 5–18",
+    "Opportunity youth ages 16–24",
+    "Families in rural and tribal communities",
+    "Traditional artists and culture bearers",
+    "Rural pet owners"
+  ],
+  "geography": {
+    "summary": "Organizations must be located in or provide services to residents of Coconino, Yavapai, Navajo, or Apache counties, Arizona.",
+    "areas": ["Coconino County", "Yavapai County", "Navajo County", "Apache County"]
+  },
+  "eligibility": [
+    "Tax-exempt under Section 501(c)(3), a public or governmental agency (including public schools), a federally recognized tribe or tribal program, or a project with a qualified fiscal sponsor",
+    "Located in or primarily serving residents of Coconino, Yavapai, Navajo, or Apache counties",
+    "In operation for at least two years with a board-approved annual budget",
+    "Non-discriminatory in hiring, board membership, and delivery of services",
+    "Work aligns with at least one Fall Cycle field of interest: Education & Youth, Arts & Culture, Environment & Land Stewardship, or Animal Welfare",
+    "One Community Impact Grant application per organization per calendar year (Spring or Fall, not both)"
+  ],
+  "not_eligible": [
+    "Organizations that received a Community Impact Grant in calendar year 2026",
+    "Individuals, scholarships, or private school tuition",
+    "Religious activities",
+    "Capital campaigns, endowments, or debt reduction",
+    "Lobbying or partisan political activity",
+    "Fundraising events and sponsorships"
+  ],
+  "funding": {
+    "type": "General operating support (unrestricted)",
+    "summary": "$5,000 to $25,000, determined by the organization's annual operating budget",
+    "min": 5000,
+    "max": 25000,
+    "term": "One year (January 1 – December 31, 2028)",
+    "total_available": "Approximately $625,000",
+    "tiers": [
+      {"budget": "Up to $75,000", "award": "$5,000"},
+      {"budget": "$75,001 – $200,000", "award": "$10,000"},
+      {"budget": "$200,001 – $750,000", "award": "$15,000"},
+      {"budget": "$750,001 and above", "award": "$25,000"}
+    ]
+  },
+  "dates": {
+    "opens": "2027-07-12",
+    "application_deadline": "2027-08-20",
+    "deadline_time": "5:00 p.m. MST",
+    "info_session": "Applicant information session (virtual): Wednesday, July 14, 2027, 10:00 a.m. MST",
+    "decision": "Applicants notified by November 19, 2027",
+    "grant_period": "January 1 – December 31, 2028"
+  },
+  "how_to_apply": {
+    "intro": "Applications are submitted through the CPCF Grant Portal during the open window. The Fall Cycle uses the same application worksheet as the Spring Cycle.",
+    "steps": [
+      {"title": "Confirm eligibility", "text": "Review the 2027 Fall Cycle Guidelines and complete the Grant Eligibility Checklist."},
+      {"title": "Prepare your answers", "text": "Download the Community Impact Grant Application Worksheet and draft your responses."},
+      {"title": "Create or update your portal account", "text": "New applicants create an organization profile in the CPCF Grant Portal. Returning applicants confirm that their profile is current."},
+      {"title": "Submit the application", "text": "Submit the online application, operating budget, and most recent financial statements by 5:00 p.m. MST on August 20, 2027."},
+      {"title": "Site visit and decision", "text": "Program staff may schedule site visits in September and October. Decisions are announced by November 19, 2027."}
+    ]
+  },
+  "review_criteria": [
+    "Alignment with Fall Cycle fields of interest",
+    "Evidence of community need and results",
+    "Equity: the organization is led by, or meaningfully involves, the communities it serves",
+    "Collaboration and partnership",
+    "Financial health and sustainability",
+    "Completeness of the application"
+  ],
+  "reporting": {
+    "summary": "Grantees submit a brief Community Impact Story Report at the end of the grant period.",
+    "items": [
+      "A short narrative (300–500 words) or photo story describing how the grant strengthened the organization",
+      "Number of people served during the grant year",
+      "Permission indicating whether CPCF may share the story publicly"
+    ],
+    "due": "January 31, 2029",
+    "forms": ["community-impact-story-report-form"]
+  },
+  "documents": ["guidelines-community-impact-fall-2027", "community-impact-application-worksheet", "grant-eligibility-checklist", "fiscal-sponsor-letter-template", "community-impact-story-report-form"],
+  "contact": {"name": "Joaquín Arviso", "title": "Program Officer, Education, Arts & Environment", "email": "jarviso@cinderpeakscf.org", "phone": "(928) 555-0147 ext. 116"},
+  "faq": [
+    {"q": "Are public schools eligible?", "a": "Yes. Public school districts, charter schools, and Bureau of Indian Education schools may apply. A school's award tier is based on the budget of the program or school site, not the full district budget."},
+    {"q": "Can we apply to both the Fall Cycle and the Plateau Indigenous Communities Fund?", "a": "Yes. The Plateau Fund has a separate review process, and applying to it does not affect Community Impact eligibility."}
+  ]
+}

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% block description %}Grant opportunities from {{ site.org.name }} for nonprofits, tribal programs, and public agencies in northern Arizona and statewide.{% endblock %}
+{% block main %}
+{{ m.page_hero("Grant Opportunities", "We offer nine grant programs for nonprofits, schools, tribal programs, and public agencies. Each program has its own page with eligibility, deadlines, funding amounts, application instructions, and downloadable documents.", [("Grants", "")], "Grants") }}
+
+<section class="section">
+  <div class="container">
+    <div class="table-wrap">
+      <table class="overview-table">
+        <caption>Grant programs at a glance (deadlines are 5:00 p.m. Arizona time)</caption>
+        <thead>
+          <tr><th scope="col">Program</th><th scope="col">Funding</th><th scope="col">Deadlines</th><th scope="col">Geography</th></tr>
+        </thead>
+        <tbody>
+        {% for g in grants_sorted %}
+          <tr>
+            <th scope="row"><a href="{{ url('grants/' ~ g.id ~ '/') }}">{{ g.title }}</a></th>
+            <td>{{ g.funding.summary }}</td>
+            <td>
+              {% if g.dates.loi_deadline %}Letter of inquiry: {{ g.dates.loi_deadline|date }}<br>Full application: {{ g.dates.application_deadline|date }}
+              {% elif g.dates.application_deadline %}Application: {{ g.dates.application_deadline|date }}
+              {% else %}Rolling, reviewed year-round{% endif %}
+            </td>
+            <td>{{ g.geography.areas|join(', ') }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Programs with a letter of inquiry (LOI) use a two-stage process. See the <a href="{{ url('grants/calendar/') }}">grants calendar</a> for every milestone.</p>
+  </div>
+</section>
+
+<section class="section section-sand">
+  <div class="container">
+    <h2>Competitive grant programs</h2>
+    <div class="card-grid">
+      {% for g in grants_sorted if not g.dates.rolling and g.id != 'shared-giving-catalog' %}{{ m.grant_card(g) }}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Year-round and donor-advised opportunities</h2>
+    <div class="card-grid">
+      {% for g in grants if g.dates.rolling or g.id == 'shared-giving-catalog' %}{{ m.grant_card(g) }}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-pine">
+  <div class="container split split-even">
+    <div>
+      <h2>Before you apply</h2>
+      <ul class="check-list check-list-light">
+        <li><a href="{{ url('grants/eligibility-policies/') }}">Review eligibility and grant policies</a></li>
+        <li><a href="{{ url('grants/how-to-apply/') }}">Learn how the application process works</a></li>
+        <li><a href="{{ url('resources/guidelines-rfps/') }}">Download program guidelines and RFPs</a></li>
+        <li><a href="{{ url('resources/application-templates/') }}">Prepare with application templates</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Questions?</h2>
+      <p>Contact the Grants &amp; Community Impact team at <a href="mailto:{{ site.contact.grants_email }}">{{ site.contact.grants_email }}</a> or {{ site.contact.phone }}. Program officer contacts are listed on each program page.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

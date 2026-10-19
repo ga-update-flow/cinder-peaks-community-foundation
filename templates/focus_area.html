@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% block description %}{{ area.summary }} {{ area.title }} grantmaking at {{ site.org.name }}.{% endblock %}
+{% block main %}
+{{ m.page_hero(area.title, area.summary, [("Focus Areas", "focus-areas/"), (area.title, "")], (focus.groups|selectattr('id', 'equalto', area.group)|first).title) }}
+<div class="container prose-layout">
+  <div class="prose">
+    <h2>Why it matters</h2>
+    <p>{{ area.description }}</p>
+    <h2>Our goals</h2>
+    <ul class="check-list">{% for gl in area.goals %}<li>{{ gl }}</li>{% endfor %}</ul>
+    <h2>Populations served</h2>
+    <ul class="tag-row tag-list">{% for p in area.populations %}<li class="tag tag-static">{{ p }}</li>{% endfor %}</ul>
+    <h2>Related grant programs</h2>
+    <div class="card-grid card-grid-2">
+      {% for gid in area.grants %}{{ m.grant_card(grants_by_id[gid]) }}{% endfor %}
+    </div>
+  </div>
+  <aside class="prose-aside">
+    <div class="summary-card">
+      <h2>Other focus areas</h2>
+      <ul class="aside-links">
+        {% for a in focus.areas if a.id != area.id %}<li><a href="{{ url('focus-areas/' ~ a.id ~ '/') }}">{{ a.title }}</a></li>{% endfor %}
+      </ul>
+    </div>
+  </aside>
+</div>
+{% endblock %}

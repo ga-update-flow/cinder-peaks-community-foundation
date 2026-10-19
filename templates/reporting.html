@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% block description %}Grant reporting requirements and forms for {{ site.org.name }} grantees.{% endblock %}
+{% block main %}
+{{ m.page_hero("Grant Reporting Requirements", "We keep reporting simple and proportional to the size of the grant. Reporting requirements and due dates for every program are listed below.", [("Grants", "grants/"), ("Reporting Requirements", "")], "Grants") }}
+<section class="section">
+  <div class="container">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Program</th><th scope="col">What to submit</th><th scope="col">Due</th><th scope="col">Form</th></tr></thead>
+        <tbody>
+        {% for g in grants %}
+          <tr>
+            <th scope="row"><a href="{{ url('grants/' ~ g.id ~ '/') }}#reporting">{{ g.title }}</a></th>
+            <td>{{ g.reporting.summary }}</td>
+            <td>{{ g.reporting.due }}</td>
+            <td>{% if g.reporting.forms %}{% for f in g.reporting.forms %}<a href="{{ doc_href(f) }}">{{ docs_by_id[f].title }}</a>{% if not loop.last %}<br>{% endif %}{% endfor %}{% else %}Thank-you acknowledgment{% endif %}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <h2>Reporting forms</h2>
+    <ul class="doc-list">
+      {% for d in documents if d.category == 'reporting' %}{{ m.doc_item(d) }}{% endfor %}
+    </ul>
+    <h2>Submitting a report</h2>
+    <p>Upload reports in the CPCF Grant Portal under "My Grants," or email them to <a href="mailto:{{ site.contact.grants_email }}">{{ site.contact.grants_email }}</a>. If you expect to miss a due date or need to change how grant funds are used, contact the Grants Manager before the due date.</p>
+    {{ m.contact_card({"name": "Theo Lindqvist", "title": "Grants Manager", "email": "tlindqvist@cinderpeakscf.org", "phone": "(928) 555-0147 ext. 119"}, "Reporting questions") }}
+  </div>
+</section>
+{% endblock %}

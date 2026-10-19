@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% block body_class %}home{% endblock %}
+{% block head %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NGO","name":"{{ site.org.name }}","url":"{{ site.base_url }}","logo":"{{ site.base_url }}assets/img/favicon.png","foundingDate":"{{ site.org.founded }}","telephone":"{{ site.contact.phone }}","email":"{{ site.contact.general_email }}","address":{"@type":"PostalAddress","streetAddress":"{{ site.contact.street }}","addressLocality":"Flagstaff","addressRegion":"AZ","postalCode":"86001","addressCountry":"US"},"areaServed":["Coconino County, AZ","Yavapai County, AZ","Navajo County, AZ","Apache County, AZ"]}
+</script>
+{% endblock %}
+{% block main %}
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">Community foundation for northern Arizona since {{ site.org.founded }}</p>
+      <h1>Generosity that lasts as long as the mountains.</h1>
+      <p class="lead">{{ site.org.name }} connects donors with the people and organizations strengthening Coconino, Yavapai, Navajo, and Apache counties. We award grants, steward charitable funds, and help nonprofits grow stronger.</p>
+      <div class="hero-actions">
+        <a class="btn btn-accent" href="{{ url('grants/') }}">Explore grant opportunities</a>
+        <a class="btn btn-outline" href="{{ url('resources/') }}">Guidelines &amp; documents</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      {% include "_landscape.svg" %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Who we are</p>
+      <h2>A permanent source of support for the high country</h2>
+      <p>{{ site.org.mission }}</p>
+      <p>Founded in {{ site.org.founded }} by Flagstaff families who wanted to keep charitable dollars working close to home, the Foundation now stewards {{ site.stats[2].value }} charitable funds and serves a region larger than many states, from the Grand Canyon and the Navajo Nation to the Verde Valley and the White Mountains.</p>
+      <a class="text-link" href="{{ url('about/') }}">Learn about the Foundation</a>
+    </div>
+    <ul class="stats" aria-label="The Foundation by the numbers">
+      {% for s in site.stats %}
+      <li><span class="stat-value">{{ s.value }}</span><span class="stat-label">{{ s.label }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section-sand">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Our funding priorities</p>
+      <h2>Focus areas</h2>
+      <p>Our grantmaking is organized around six community fields of interest and four donor-built community funds.</p>
+    </div>
+    <ul class="focus-grid">
+      {% for a in focus.areas %}
+      <li class="focus-tile">
+        <span class="focus-icon">{{ m.icon(a.icon) }}</span>
+        <h3><a href="{{ url('focus-areas/' ~ a.id ~ '/') }}">{{ a.title }}</a></h3>
+        <p>{{ a.summary }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="section-more"><a class="text-link" href="{{ url('focus-areas/') }}">See all focus areas and goals</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">For nonprofits</p>
+      <h2>Upcoming grant deadlines</h2>
+      <p>Each program has its own guidelines, deadlines, and application documents. Times are Arizona time (MST).</p>
+    </div>
+    <div class="card-grid">
+      {% for g in upcoming[:6] %}{{ m.grant_card(g) }}{% endfor %}
+    </div>
+    <p class="section-more"><a class="btn btn-primary" href="{{ url('grants/') }}">View all {{ grants|length }} grant programs</a></p>
+  </div>
+</section>
+
+<section class="section section-pine">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Applying for a grant</p>
+      <h2>Three steps to apply</h2>
+    </div>
+    <ol class="steps">
+      <li><h3>Find the right program</h3><p>Review program pages and confirm eligibility with the <a href="{{ doc_href('grant-eligibility-checklist') }}">Grant Eligibility Checklist</a>.</p></li>
+      <li><h3>Download the guidelines</h3><p>Every program has a PDF guideline or RFP plus application templates in the <a href="{{ url('resources/') }}">document library</a>.</p></li>
+      <li><h3>Submit before the deadline</h3><p>Follow the program's <a href="{{ url('grants/how-to-apply/') }}">application instructions</a>. Questions? Call {{ site.contact.phone }}.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split split-even">
+    <div>
+      <p class="eyebrow">Resources &amp; reports</p>
+      <h2>Transparent and accountable</h2>
+      <p>Read our latest annual report, community impact report, and financial summary, or download the 2026–2027 grants calendar.</p>
+      <ul class="doc-list doc-list-compact">
+        {% for id in ['annual-report-2025', 'impact-report-2025', 'grants-calendar-2026-2027'] %}{{ m.doc_item(docs_by_id[id], False) }}{% endfor %}
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow">News &amp; stories</p>
+      <h2>Recent news</h2>
+      <ul class="news-list">
+        {% for n in site.news %}
+        <li>
+          <p class="news-date"><time datetime="{{ n.date }}">{{ n.date|date }}</time></p>
+          <h3><a href="{{ url('about/news/') }}#{{ n.id }}">{{ n.title }}</a></h3>
+          <p>{{ n.summary }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section-sand cta-band">
+  <div class="container cta-inner">
+    <div>
+      <h2>Have a question about a grant?</h2>
+      <p>Our program officers are glad to talk through your idea before you apply.</p>
+    </div>
+    <a class="btn btn-primary" href="{{ url('contact/') }}">Contact the Foundation</a>
+  </div>
+</section>
+{% endblock %}
