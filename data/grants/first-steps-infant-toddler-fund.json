@@ -64,7 +64,7 @@
     "deadline_time": "5:00 p.m. MST",
     "invitation_date": "2027-01-29",
     "application_deadline": "2027-03-05",
-    "decision": "Award decisions announced by May 14, 2027",
+    "award_notification": "2027-04-16",
     "grant_period": "July 1, 2027 – June 30, 2028 (one-year grants) or June 30, 2029 (two-year grants)"
   },
   "how_to_apply": {
@@ -88,7 +88,7 @@
       },
       {
         "title": "Decision",
-        "text": "Awards are announced by May 14, 2027, and funds are released in July."
+        "text": "Applicants are notified of award decisions on April 16, 2027, and funds are released in July."
       }
     ]
   },

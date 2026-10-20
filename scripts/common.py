@@ -104,6 +104,8 @@ def key_dates(grant):
         rows.append((label, f"{fmt_date(d['application_deadline'], weekday=True)}, {t}".rstrip(", ")))
     if d.get("decision"):
         rows.append(("Decision", d["decision"]))
+    if d.get("award_notification"):
+        rows.append(("Award notification date", fmt_date(d["award_notification"], weekday=True)))
     if d.get("grant_period"):
         rows.append(("Grant period", d["grant_period"]))
     return rows
