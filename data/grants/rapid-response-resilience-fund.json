@@ -5,7 +5,7 @@
   "short_title": "Rapid Response Fund",
   "program_type": "Rolling emergency grant",
   "status": "Open year-round",
-  "summary": "Fast grants of up to $10,000 for nonprofits, tribal programs, and public agencies responding to wildfire, flooding, severe winter storms, and other emergencies in northern Arizona.",
+  "summary": "Fast grants of up to $7,500 for nonprofits, tribal programs, and public agencies responding to wildfire, flooding, severe winter storms, and other emergencies in northern Arizona.",
   "description": [
     "The High Country Rapid Response & Resilience Fund was created after the 2010 Schultz Fire and post-fire flooding outside Flagstaff. It provides fast, flexible funding to organizations helping residents during and after emergencies, and supports preparedness projects between disasters.",
     "Requests are reviewed on a rolling basis, and most decisions are made within ten business days. During a declared emergency the Foundation may open a dedicated response window with expedited review, announced on this page."
@@ -39,9 +39,9 @@
   ],
   "funding": {
     "type": "Emergency response or preparedness project support",
-    "summary": "Up to $10,000; most awards range from $2,500 to $7,500",
+    "summary": "Up to $7,500; most awards range from $2,500 to $7,500",
     "min": 1000,
-    "max": 10000,
+    "max": 7500,
     "term": "Funds must be spent within six months of award"
   },
   "dates": {

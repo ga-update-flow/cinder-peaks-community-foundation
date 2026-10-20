@@ -297,7 +297,7 @@ def gen_rapid_request(ctx, doc):
     b.answer_box("How will you use the grant, and how quickly will you spend it?", 5, "200 words")
     b.answer_box("Which emergency management, tribal, or relief agencies are you coordinating with?", 3, "100 words")
     b.h1("Budget")
-    b.table([(s, "") for s in ["Food, water, and supplies", "Temporary shelter or lodging", "Transportation and fuel", "Staff or volunteer costs", "Equipment and cleanup", "Other (describe)", "Total request (up to $10,000)"]],
+    b.table([(s, "") for s in ["Food, water, and supplies", "Temporary shelter or lodging", "Transportation and fuel", "Staff or volunteer costs", "Equipment and cleanup", "Other (describe)", "Total request (up to $7,500)"]],
             header=["Use of funds", "Amount"], widths=(4.4, 2.3), total_row=True)
     b.h1("Payment")
     b.form(["Payee name", "Payment method (direct deposit or check)", "Authorized signer and date"])
