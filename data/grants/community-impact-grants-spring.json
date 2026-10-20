@@ -65,7 +65,7 @@
   "dates": {
     "opens": "2027-02-01",
     "application_deadline": "2027-03-12",
-    "deadline_time": "5:00 p.m. MST",
+    "deadline_time": "6:00 p.m. MST",
     "info_session": "Applicant information session (virtual): Thursday, February 4, 2027, 10:00 a.m. MST",
     "decision": "Applicants notified by May 28, 2027",
     "grant_period": "July 1, 2027 – June 30, 2028"
@@ -76,7 +76,7 @@
       {"title": "Confirm eligibility", "text": "Review the 2027 Spring Cycle Guidelines and complete the Grant Eligibility Checklist. Contact the program officer if you are unsure whether your work fits."},
       {"title": "Prepare your answers", "text": "Download the Community Impact Grant Application Worksheet to draft responses offline. The worksheet mirrors every question in the portal."},
       {"title": "Create or update your portal account", "text": "New applicants create an organization profile in the CPCF Grant Portal. Returning applicants sign in and confirm that board, budget, and contact information are current."},
-      {"title": "Submit the application", "text": "Submit the online application, current-year operating budget, and most recent board-approved financial statements by 5:00 p.m. MST on March 12, 2027."},
+      {"title": "Submit the application", "text": "Submit the online application, current-year operating budget, and most recent board-approved financial statements by 6:00 p.m. MST on March 12, 2027."},
       {"title": "Site visit and decision", "text": "Program staff may schedule a phone call or site visit in April. All applicants are notified of decisions by May 28, 2027."}
     ]
   },

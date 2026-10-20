@@ -223,7 +223,7 @@ def gen_eligibility_checklist(ctx, doc):
         "Our organization does not discriminate in hiring, board membership, or delivery of services.",
         "The request is not for individuals, scholarships, religious activities, lobbying, endowments, or fundraising events.",
         "We have read the current guidelines or RFP for the program.",
-        "We can submit by 5:00 p.m. MST (Arizona time) on the deadline date.",
+        "We can submit by 6:00 p.m. MST (Arizona time) on the deadline date.",
     ])
     b.h1("Community Impact Grants (Spring and Fall)")
     b.checklist([
@@ -558,7 +558,7 @@ def gen_research_brief(ctx, doc):
 
 
 def gen_grants_calendar(ctx, doc):
-    b = BrandedDoc(ctx, doc["title"], "Grants Calendar", "Deadlines are 5:00 p.m. Mountain Standard Time (Arizona time) unless noted.")
+    b = BrandedDoc(ctx, doc["title"], "Grants Calendar", "Deadlines are 6:00 p.m. Mountain Standard Time (Arizona time) unless noted.")
     events = []
     for g in ctx["grants"]:
         d = g["dates"]
