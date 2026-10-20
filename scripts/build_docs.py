@@ -307,6 +307,8 @@ def gen_rapid_request(ctx, doc):
 def gen_catalog_profile(ctx, doc):
     g = ctx["grants_by_id"]["shared-giving-catalog"]
     b = BrandedDoc(ctx, doc["title"], "Application Form", f"Profiles due {fmt_date(g['dates']['application_deadline'], weekday=True)}, {g['dates']['deadline_time']}")
+    if doc.get("revision_note"):
+        b.hint(doc["revision_note"])
     b.h1("Organization profile")
     b.form(["Organization name", "Website", "Contact name, email, and phone", "Counties served", "Annual operating budget", "Primary field of interest"])
     b.answer_box("Organizational summary for fundholders", 6, "150 words")
