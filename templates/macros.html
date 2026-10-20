@@ -52,7 +52,8 @@
   <dl class="card-facts">
     <div><dt>Funding</dt><dd>{{ g.funding.summary }}</dd></div>
     {% if g.dates.loi_deadline %}<div><dt>LOI deadline</dt><dd>{{ g.dates.loi_deadline|date }}</dd></div>{% endif %}
-    {% if g.dates.application_deadline %}<div><dt>{{ 'Full application' if g.dates.loi_deadline else 'Application deadline' }}</dt><dd>{{ g.dates.application_deadline|date }}</dd></div>{% endif %}
+    {% if g.dates.registration_deadline %}<div><dt>Registration deadline</dt><dd>{{ g.dates.registration_deadline|date }}</dd></div>{% endif %}
+    {% if g.dates.application_deadline %}<div><dt>{{ g.dates.application_deadline_label or ('Full application' if g.dates.loi_deadline else 'Application deadline') }}</dt><dd>{{ g.dates.application_deadline|date }}</dd></div>{% endif %}
     {% if g.dates.rolling %}<div><dt>Deadline</dt><dd>Rolling, reviewed year-round</dd></div>{% endif %}
     <div><dt>Geography</dt><dd>{{ g.geography.areas|join(', ') }}</dd></div>
   </dl>

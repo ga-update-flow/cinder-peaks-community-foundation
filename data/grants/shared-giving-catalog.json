@@ -4,7 +4,7 @@
   "title": "Shared Giving Catalog",
   "short_title": "Shared Giving Catalog",
   "program_type": "Donor-advised giving catalog (abbreviated application)",
-  "status": "Profiles due December 11, 2026",
+  "status": "Registration due November 30, 2026; profiles due December 11, 2026",
   "summary": "An abbreviated profile application that places northern Arizona nonprofits in the Foundation's 2027 Shared Giving Catalog, which is distributed to more than 300 donor-advised fundholders.",
   "description": [
     "The Shared Giving Catalog introduces Foundation fundholders to vetted nonprofits across the region. Each listed organization receives a one-page profile describing its work and a specific funding need. Fundholders recommend grants directly from their donor-advised funds.",
@@ -50,13 +50,19 @@
   },
   "dates": {
     "opens": "2026-10-15",
+    "registration_deadline": "2026-11-30",
     "application_deadline": "2026-12-11",
+    "application_deadline_label": "Profile submission deadline",
     "deadline_time": "5:00 p.m. MST",
     "decision": "Catalog published February 1, 2027"
   },
   "how_to_apply": {
     "intro": "The catalog profile is a short form that takes about two hours to complete.",
     "steps": [
+      {
+        "title": "Register for the catalog",
+        "text": "Register your organization for the 2027 Shared Giving Catalog in the CPCF Grant Portal by 5:00 p.m. MST on November 30, 2026. Registration is a separate milestone from the profile submission deadline of December 11, 2026."
+      },
       {
         "title": "Download the profile form",
         "text": "Complete the Shared Giving Catalog Profile Form, including a 150-word organizational summary and one funding need."

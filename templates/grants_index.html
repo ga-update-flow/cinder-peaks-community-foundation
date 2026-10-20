@@ -19,6 +19,7 @@
             <td>{{ g.funding.summary }}</td>
             <td>
               {% if g.dates.loi_deadline %}Letter of inquiry: {{ g.dates.loi_deadline|date }}<br>Full application: {{ g.dates.application_deadline|date }}
+              {% elif g.dates.registration_deadline %}Registration: {{ g.dates.registration_deadline|date }}<br>Profile submission: {{ g.dates.application_deadline|date }}
               {% elif g.dates.application_deadline %}Application: {{ g.dates.application_deadline|date }}
               {% else %}Rolling, reviewed year-round{% endif %}
             </td>

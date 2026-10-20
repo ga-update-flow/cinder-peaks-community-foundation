@@ -92,6 +92,8 @@ def key_dates(grant):
         rows.append(("Application review", d["rolling"]))
     if d.get("opens"):
         rows.append(("Application period opens", fmt_date(d["opens"], weekday=True)))
+    if d.get("registration_deadline"):
+        rows.append(("Registration deadline", f"{fmt_date(d['registration_deadline'], weekday=True)}, {t}".rstrip(", ")))
     if d.get("info_session"):
         label, _, val = d["info_session"].partition(": ")
         rows.append((label, val))
@@ -100,7 +102,7 @@ def key_dates(grant):
     if d.get("invitation_date"):
         rows.append(("Invitations to submit a full application", f"Sent by {fmt_date(d['invitation_date'])}"))
     if d.get("application_deadline"):
-        label = "Full application deadline" if d.get("loi_deadline") else "Application deadline"
+        label = d.get("application_deadline_label") or ("Full application deadline" if d.get("loi_deadline") else "Application deadline")
         rows.append((label, f"{fmt_date(d['application_deadline'], weekday=True)}, {t}".rstrip(", ")))
     if d.get("decision"):
         rows.append(("Decision", d["decision"]))

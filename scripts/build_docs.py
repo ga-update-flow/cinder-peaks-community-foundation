@@ -564,12 +564,14 @@ def gen_grants_calendar(ctx, doc):
         d = g["dates"]
         if d.get("opens"):
             events.append((d["opens"], g["title"], "Application period opens"))
+        if d.get("registration_deadline"):
+            events.append((d["registration_deadline"], g["title"], "Registration deadline"))
         if d.get("loi_deadline"):
             events.append((d["loi_deadline"], g["title"], "Letter of inquiry deadline"))
         if d.get("invitation_date"):
             events.append((d["invitation_date"], g["title"], "Full application invitations sent"))
         if d.get("application_deadline"):
-            events.append((d["application_deadline"], g["title"], "Full application deadline" if d.get("loi_deadline") else "Application deadline"))
+            events.append((d["application_deadline"], g["title"], d.get("application_deadline_label") or ("Full application deadline" if d.get("loi_deadline") else "Application deadline")))
     events.sort()
     b.table([(fmt_date(e[0], weekday=True), e[1], e[2]) for e in events], header=["Date", "Program", "Milestone"], widths=(2.1, 2.9, 1.8), font_size=9)
     b.h2("Open year-round")

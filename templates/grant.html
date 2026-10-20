@@ -173,7 +173,8 @@
       <dl>
         <div><dt>Funding</dt><dd>{{ g.funding.summary }}</dd></div>
         {% if g.dates.loi_deadline %}<div><dt>LOI deadline</dt><dd>{{ g.dates.loi_deadline|longdate }}</dd></div>{% endif %}
-        {% if g.dates.application_deadline %}<div><dt>{{ 'Full application deadline' if g.dates.loi_deadline else 'Application deadline' }}</dt><dd>{{ g.dates.application_deadline|longdate }}</dd></div>{% endif %}
+        {% if g.dates.registration_deadline %}<div><dt>Registration deadline</dt><dd>{{ g.dates.registration_deadline|longdate }}</dd></div>{% endif %}
+        {% if g.dates.application_deadline %}<div><dt>{{ g.dates.application_deadline_label or ('Full application deadline' if g.dates.loi_deadline else 'Application deadline') }}</dt><dd>{{ g.dates.application_deadline|longdate }}</dd></div>{% endif %}
         {% if g.dates.rolling %}<div><dt>Deadline</dt><dd>Rolling; reviewed year-round</dd></div>{% endif %}
         <div><dt>Geography</dt><dd>{{ g.geography.areas|join('; ') }}</dd></div>
         <div><dt>Focus areas</dt><dd>{% for f in g.focus_areas %}{{ focus_by_id[f].title }}{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>

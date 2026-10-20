@@ -64,11 +64,11 @@ def calendar_events(ctx):
     events = []
     for g in ctx["grants"]:
         d = g["dates"]
-        for key, label in (("opens", "Application period opens"), ("loi_deadline", "Letter of inquiry deadline"),
+        for key, label in (("opens", "Application period opens"), ("registration_deadline", "Registration deadline"), ("loi_deadline", "Letter of inquiry deadline"),
                            ("invitation_date", "Full application invitations sent"), ("application_deadline", None)):
             if d.get(key):
-                lab = label or ("Full application deadline" if d.get("loi_deadline") else "Application deadline")
-                events.append({"date": d[key], "grant": g, "label": lab, "is_deadline": key in ("loi_deadline", "application_deadline")})
+                lab = label or d.get("application_deadline_label") or ("Full application deadline" if d.get("loi_deadline") else "Application deadline")
+                events.append({"date": d[key], "grant": g, "label": lab, "is_deadline": key in ("registration_deadline", "loi_deadline", "application_deadline")})
     events.sort(key=lambda e: e["date"])
     return events
 
