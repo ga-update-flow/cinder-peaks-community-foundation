@@ -37,15 +37,15 @@
     "In operation for at least two years with a board-approved annual budget",
     "Non-discriminatory in hiring, board membership, and delivery of services",
     "Work aligns with at least one Fall Cycle field of interest: Education & Youth, Arts & Culture, Environment & Land Stewardship, or Animal Welfare",
-    "One Community Impact Grant application per organization per calendar year (Spring or Fall, not both)"
+    "One Community Impact Grant application per organization per calendar year (Spring or Fall, not both)",
+    "Fundraising events and sponsorships"
   ],
   "not_eligible": [
     "Organizations that received a Community Impact Grant in calendar year 2026",
     "Individuals, scholarships, or private school tuition",
     "Religious activities",
     "Capital campaigns, endowments, or debt reduction",
-    "Lobbying or partisan political activity",
-    "Fundraising events and sponsorships"
+    "Lobbying or partisan political activity"
   ],
   "funding": {
     "type": "General operating support (unrestricted)",

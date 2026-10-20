@@ -38,15 +38,15 @@
     "In operation for at least two years with a board-approved annual budget",
     "Non-discriminatory in hiring, board membership, and delivery of services",
     "Work aligns with at least one Spring Cycle field of interest: Health & Human Services or Civic & Economic Opportunity",
-    "One Community Impact Grant application per organization per calendar year (Spring or Fall, not both)"
+    "One Community Impact Grant application per organization per calendar year (Spring or Fall, not both)",
+    "Fundraising events and sponsorships"
   ],
   "not_eligible": [
     "Organizations that received a Community Impact Grant in calendar year 2026 (recipients of donor-advised grants remain eligible)",
     "Individuals, scholarships, or tuition",
     "Religious activities, although faith-based organizations providing secular services to all are eligible",
     "Capital campaigns, endowments, or debt reduction",
-    "Lobbying or partisan political activity",
-    "Fundraising events and sponsorships"
+    "Lobbying or partisan political activity"
   ],
   "funding": {
     "type": "General operating support (unrestricted)",
