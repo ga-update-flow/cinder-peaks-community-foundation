@@ -1,6 +1,7 @@
 {
   "id": "rising-roots-black-futures-fund",
   "order": 6,
+  "soft_404": true,
   "title": "Rising Roots Black Futures Fund",
   "short_title": "Rising Roots Fund",
   "program_type": "Competitive grant",

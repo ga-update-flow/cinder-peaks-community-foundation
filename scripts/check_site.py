@@ -172,6 +172,8 @@ def main():
 
     # Grant pages link their own documents
     for g in ctx["grants"]:
+        if g.get("soft_404"):
+            continue  # simulated soft 404 test page intentionally has no grant content
         rel = f"grants/{g['id']}/"
         html = (SITE_OUT / rel / "index.html").read_text() if not remote else fetch(remote + rel)[1].decode()
         for did in g["documents"]:

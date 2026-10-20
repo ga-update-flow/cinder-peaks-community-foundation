@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% import "macros.html" as m with context %}
+{% set page_title = "Page not found" %}
+{% block description %}The page you requested could not be found.{% endblock %}
+{% block main %}
+<section class="page-hero"><div class="container">
+  <h1>Page not found</h1>
+  <p class="lead">The page you're looking for may have moved. Try one of these links instead.</p>
+  <ul class="link-grid">
+    <li><a href="{{ url('grants/') }}">Grant Opportunities</a><span>All programs</span></li>
+    <li><a href="{{ url('resources/') }}">Resources &amp; Reports</a><span>Document library</span></li>
+    <li><a href="{{ url('contact/') }}">Contact</a><span>Reach our staff</span></li>
+  </ul>
+</div></section>
+{% endblock %}

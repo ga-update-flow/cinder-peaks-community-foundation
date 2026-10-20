@@ -54,7 +54,7 @@ def build_pages(ctx):
     for a in ctx["focus"]["areas"]:
         pages.append((f"focus-areas/{a['id']}/", "focus_area.html", a["title"], {"area": a}))
     for g in ctx["grants"]:
-        pages.append((f"grants/{g['id']}/", "grant.html", g["title"], {"grant": g}))
+        pages.append((f"grants/{g['id']}/", "soft_404.html" if g.get("soft_404") else "grant.html", g["title"], {"grant": g}))
     for c in ctx["categories"].values():
         pages.append((f"resources/{c['slug']}/", "resource_category.html", c["title"], {"category": c}))
     return pages
