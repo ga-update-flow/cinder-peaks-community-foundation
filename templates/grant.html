@@ -10,11 +10,12 @@
     <h1>{{ g.title }}</h1>
     <p class="lead">{{ g.summary }}</p>
     <p class="status-pill status-pill-lg">{{ g.status }}</p>
+    {% if g.closure_notice %}<p class="closure-notice" role="status"><strong>Applications closed.</strong> {{ g.closure_notice }}</p>{% endif %}
   </div>
 </section>
 
 <div class="container grant-layout">
-  <article class="grant-main" data-opportunity-id="{{ g.id }}">
+  <article class="grant-main" data-opportunity-id="{{ g.id }}"{% if g.closure_notice %} data-application-status="closed-early"{% endif %}>
     <nav class="on-this-page" aria-label="On this page">
       <p>On this page</p>
       <ul>
@@ -107,6 +108,7 @@
 
     <section id="how-to-apply" class="grant-section" data-field="how-to-apply">
       <h2>How to apply</h2>
+      {% if g.closure_notice %}<p class="closure-notice"><strong>Applications closed.</strong> {{ g.closure_notice }}</p>{% endif %}
       <p>{{ g.how_to_apply.intro }}</p>
       <ol class="step-list">
         {% for s in g.how_to_apply.steps %}<li><strong>{{ s.title }}.</strong> {{ s.text }}</li>{% endfor %}

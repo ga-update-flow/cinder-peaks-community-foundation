@@ -21,6 +21,7 @@
               {% if g.dates.loi_deadline %}Letter of inquiry: {{ g.dates.loi_deadline|date }}<br>Full application: {{ g.dates.application_deadline|date }}
               {% elif g.dates.application_deadline %}Application: {{ g.dates.application_deadline|date }}
               {% else %}Rolling, reviewed year-round{% endif %}
+              {% if g.closure_notice %}<br>Closed early: {{ g.closure_notice }}{% endif %}
             </td>
             <td>{{ g.geography.areas|join(', ') }}</td>
           </tr>

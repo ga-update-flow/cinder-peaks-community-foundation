@@ -153,6 +153,7 @@ address { font-style: normal; }
 .card-title a:hover { color: var(--cinder); text-decoration: underline; }
 .status-pill { display: inline-block; align-self: flex-start; background: var(--mist); color: var(--pine-dark); font-weight: 600; font-size: .82rem; padding: 4px 12px; border-radius: 999px; margin-bottom: 12px; }
 .status-pill-lg { font-size: .95rem; padding: 6px 16px; background: #fff; }
+.closure-notice { background: #FBEDE8; border-left: 4px solid var(--cinder); color: var(--basalt); padding: 10px 14px; border-radius: 8px; font-size: .95rem; }
 .card-facts { margin: 4px 0 16px; font-size: .9rem; border-top: 1px solid var(--line); }
 .card-facts div { display: grid; grid-template-columns: 130px 1fr; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--line); }
 .card-facts dt { color: var(--stone); font-weight: 600; }

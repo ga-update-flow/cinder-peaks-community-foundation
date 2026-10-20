@@ -48,6 +48,7 @@
   <p class="card-kicker">{{ g.program_type }}</p>
   <h3 class="card-title"><a href="{{ url('grants/' ~ g.id ~ '/') }}">{{ g.title }}</a></h3>
   <p class="status-pill">{{ g.status }}</p>
+  {% if g.closure_notice %}<p class="closure-notice">{{ g.closure_notice }}</p>{% endif %}
   <p>{{ g.summary }}</p>
   <dl class="card-facts">
     <div><dt>Funding</dt><dd>{{ g.funding.summary }}</dd></div>
