@@ -102,6 +102,8 @@ def key_dates(grant):
     if d.get("application_deadline"):
         label = "Full application deadline" if d.get("loi_deadline") else "Application deadline"
         rows.append((label, f"{fmt_date(d['application_deadline'], weekday=True)}, {t}".rstrip(", ")))
+    if d.get("board_review"):
+        rows.append(("Board review meeting", fmt_date(d["board_review"], weekday=True)))
     if d.get("decision"):
         rows.append(("Decision", d["decision"]))
     if d.get("grant_period"):
