@@ -59,7 +59,7 @@
   "how_to_apply": {
     "intro": "The Prism Fund uses a single-stage application submitted through the CPCF Grant Portal.",
     "steps": [
-      {"title": "Read the guidelines", "text": "Download the Prism Fund 2026–2027 Grant Guidelines."},
+      {"title": "Read the guidelines", "text": "Download the Prism Fund 2027–2028 Grant Guidelines (Revised)."},
       {"title": "Prepare the application", "text": "Use the Community Impact Grant Application Worksheet to draft responses. Prism applicants also answer two fund-specific questions listed in the guidelines."},
       {"title": "Submit online", "text": "Submit the application and budget in the CPCF Grant Portal by 5:00 p.m. MST on November 20, 2026."},
       {"title": "Decision", "text": "The Prism Fund committee reviews applications in December. Applicants are notified by January 15, 2027."}
@@ -81,6 +81,6 @@
     "due": "February 28, 2028",
     "forms": ["community-impact-story-report-form"]
   },
-  "documents": ["guidelines-prism-fund-2026", "community-impact-application-worksheet", "grant-project-budget-template", "community-impact-story-report-form"],
+  "documents": ["guidelines-prism-fund-2027-2028", "community-impact-application-worksheet", "grant-project-budget-template", "community-impact-story-report-form"],
   "contact": {"name": "Elena Brightwater", "title": "Senior Program Officer, Health & Economic Opportunity", "email": "ebrightwater@cinderpeakscf.org", "phone": "(928) 555-0147 ext. 115"}
 }

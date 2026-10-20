@@ -50,6 +50,8 @@ def gen_guidelines(ctx, doc):
         f"Program page: {grant_url(ctx, g)}",
     ])
 
+    if doc.get("edition_note"):
+        b.callout("About this edition", doc["edition_note"])
     b.h1("About the program")
     for p in g["description"]:
         b.para(p)
