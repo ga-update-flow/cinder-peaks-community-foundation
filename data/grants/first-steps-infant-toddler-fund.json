@@ -5,10 +5,10 @@
   "short_title": "First Steps Fund",
   "program_type": "Competitive project and program grant (two-stage)",
   "status": "Letters of inquiry due January 15, 2027",
-  "summary": "Project and program grants of $10,000 to $40,000 per year, for up to two years, that expand care and support for infants and toddlers, young parents, and kin caregivers in northern Arizona.",
+  "summary": "Project and program grants of $10,000 to $40,000 per year, for up to two years, that expand care and support for children ages 3–6, preschool-aged children, and caregivers in northern Arizona.",
   "description": [
-    "The First Steps Infant & Toddler Fund invests in the first three years of life, when a child's brain develops faster than at any other time. Created in 2014 by a coalition of Flagstaff families and now supported by more than 200 donors, the fund has granted more than $3.4 million to early childhood programs across the region.",
-    "The 2027 Request for Proposals reflects the findings of the Foundation's 2026 Northern Arizona Infant Care Gap brief, which found one licensed infant care slot for every five infants in the four-county region. Proposals that add licensed infant and toddler care capacity in Apache and Navajo counties are especially encouraged.",
+    "The First Steps Infant & Toddler Fund invests in the preschool years, supporting children ages 3–6 and the caregivers who raise them. Created in 2014 by a coalition of Flagstaff families and now supported by more than 200 donors, the fund has granted more than $3.4 million to early childhood programs across the region.",
+    "The 2027 Request for Proposals reflects the findings of the Foundation's 2026 Northern Arizona Infant Care Gap brief, which found one licensed infant care slot for every five infants in the four-county region. Proposals that add licensed care capacity for children ages 3–6 in Apache and Navajo counties are especially encouraged.",
     "First Steps uses a two-stage process: a short letter of inquiry, followed by an invited full proposal. Organizations may apply to First Steps every year, including in years when they also apply for a Community Impact Grant."
   ],
   "focus_areas": [
@@ -23,10 +23,9 @@
     "Policy advocacy and public awareness related to the priorities above"
   ],
   "populations_served": [
-    "Infants and toddlers from birth to age three",
-    "Expectant and parenting young adults ages 24 and under",
-    "Grandparents and kin caregivers",
-    "Home-based and center-based early childhood educators"
+    "Children ages 3–6",
+    "Preschool-aged children",
+    "Caregivers"
   ],
   "geography": {
     "summary": "Applicants must serve families who live in Coconino, Yavapai, Navajo, or Apache counties. Priority is given to proposals serving Apache and Navajo counties and rural areas of Coconino County.",
@@ -46,7 +45,6 @@
   ],
   "not_eligible": [
     "Individual child care tuition payments",
-    "Programs serving only children ages four and older",
     "Capital construction exceeding $15,000 of the request",
     "Religious instruction"
   ],
