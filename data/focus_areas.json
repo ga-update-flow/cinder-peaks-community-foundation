@@ -19,7 +19,7 @@
         "Strengthen services for survivors of domestic and sexual violence"
       ],
       "populations": ["Low-income households", "Older adults", "People experiencing homelessness", "Rural residents", "Survivors of violence"],
-      "grants": ["community-impact-grants-spring", "rapid-response-resilience-fund"]
+      "grants": ["community-impact-grants-spring"]
     },
     {
       "id": "civic-economic-opportunity",
@@ -36,7 +36,7 @@
         "Advance legal aid and fair treatment in housing and employment"
       ],
       "populations": ["Hourly and seasonal workers", "Small business owners", "Young adults ages 18–24", "Immigrant and refugee families", "Rural residents"],
-      "grants": ["community-impact-grants-spring", "stronger-nonprofits-capacity-grants"]
+      "grants": ["community-impact-grants-spring", "stronger-nonprofits-capacity-grants", "rapid-response-resilience-fund"]
     },
     {
       "id": "education-youth",
