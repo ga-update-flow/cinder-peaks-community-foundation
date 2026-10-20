@@ -10,7 +10,7 @@
 | Change summary | Moved “Fundraising events, sponsorships, and advertising” from “What We Do Not Fund” to “Who May Apply.” |
 | Pages changed | `grants/eligibility-policies/` |
 | Documents changed | None |
-| Status | Updated version — pending review |
+| Status | Published to production on 2026-10-20 at the repository owner's request (merged into `main` and deployed to `gh-pages`) |
 | Date of change | 2026-10-20 |
 | Original production URL | https://hufsa-stack.github.io/cinder-peaks-community-foundation/ |
 
@@ -25,7 +25,7 @@ Files changed:
 - `site/grants/eligibility-policies/index.html`: generated page, rebuilt with `scripts/build_site.py`
 - `VERSION-LOG.md`: this record
 
-The original `main` branch and the production website must remain unchanged.
-Production is served by GitHub Pages from the `gh-pages` branch, which this
-update does not modify. Do not merge this branch into `main` or publish it to
-`gh-pages` unless that is explicitly approved after review.
+Before publishing, the original Version 1 was preserved in two branches:
+
+- `v1-original`: the original `main` source (commit `a5b0342`)
+- `gh-pages-v1-original`: the original published website (commit `842841c`)
