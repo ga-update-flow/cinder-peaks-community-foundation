@@ -130,7 +130,7 @@ def gen_application_worksheet(ctx, doc):
     b.h2("Grant program and field of interest")
     b.checklist([
         "Community Impact Grants: Spring Cycle (Health & Human Services; Civic & Economic Opportunity)",
-        "Community Impact Grants: Fall Cycle (Education & Youth; Arts & Culture; Environment & Land Stewardship; Animal Welfare)",
+        "Community Impact Grants: Fall Cycle (Education & Youth; History, Arts & Culture; Environment & Land Stewardship; Animal Welfare)",
         "Prism Fund for LGBTQ+ Arizonans",
     ])
     b.h1("Section 2. Organization narrative")
