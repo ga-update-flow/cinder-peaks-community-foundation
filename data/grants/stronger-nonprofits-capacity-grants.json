@@ -5,7 +5,7 @@
   "short_title": "Capacity Grants",
   "program_type": "Competitive capacity-building grant (two-stage)",
   "status": "Letters of inquiry due November 13, 2026",
-  "summary": "Grants of $5,000 to $20,000 that help small and mid-sized northern Arizona nonprofits strengthen governance, finances, fundraising, technology, and leadership.",
+  "summary": "Grants of $7,500 to $25,000 that help small and mid-sized northern Arizona nonprofits strengthen governance, finances, fundraising, technology, and leadership.",
   "description": [
     "Strong communities need strong nonprofits. Stronger Nonprofits Capacity Grants fund time-limited projects that make an organization more effective and resilient, such as a strategic plan, a new financial management system, a fundraising plan, board development, or leadership succession planning.",
     "Capacity grants are paired with the Foundation's Nonprofit Learning Hub. Grantees join a peer cohort that meets four times during the grant year, and many projects use consultants from the Foundation's vetted consultant roster.",
@@ -50,9 +50,9 @@
   ],
   "funding": {
     "type": "Capacity-building project support",
-    "summary": "$5,000 to $20,000",
-    "min": 5000,
-    "max": 20000,
+    "summary": "$7,500 to $25,000",
+    "min": 7500,
+    "max": 25000,
     "term": "Twelve months, beginning March 1, 2027",
     "total_available": "Approximately $180,000"
   },
