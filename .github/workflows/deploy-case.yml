@@ -1,0 +1,99 @@
+# Publishes ONE version (case) of the website to the live URL:
+#   https://hufsa-stack.github.io/cinder-peaks-community-foundation/
+#
+# How to use: Actions tab -> "Deploy a case" -> Run workflow -> choose a case -> Run workflow.
+#
+# What it does: creates a new commit on the gh-pages branch whose files are an exact copy
+# of the chosen branch's built website (its site/ folder), then pushes it as a normal
+# fast-forward. Nothing from the previously deployed case is kept, no branch is merged
+# or edited, and GitHub Pages settings and the URL are unchanged.
+name: Deploy a case
+
+on:
+  workflow_dispatch:
+    inputs:
+      case:
+        description: "Version to publish on the live website"
+        type: choice
+        required: true
+        options:
+          - v1-original
+          - 01 spring-eligibility-three-years
+          - 02 fall-cycle-email-application
+          - 03 rapid-response-focus-areas-update
+          - 04 first-steps-population-update
+          - 05 stronger-nonprofits-funding-increase
+          - 06 rapid-response-funding-decrease
+          - 07 spring-cycle-opening-date-february-15
+          - 08 shared-catalog-registration-deadline
+          - 09 plateau-fund-loi-deadline-december-18
+          - 10 fall-cycle-deadline-august-27
+          - 11 fall-cycle-board-meeting-date
+          - 12 first-steps-award-notification-date
+          - 13 prism-guidelines-document-replacement
+          - 14 shared-catalog-template-replacement
+          - 15 plateau-fund-contact-update
+          - 16 prism-fund-early-closure
+          - 17 rising-roots-soft-404-test
+          - clean-preview-eligibility-policies
+          - clean-preview-spring-fall-eligibility
+          - clean-preview-deadline-600-pm
+          - clean-preview-history-arts-culture
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-case
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish the chosen case to gh-pages
+        env:
+          CASE: ${{ inputs.case }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SITE_URL: https://hufsa-stack.github.io/cinder-peaks-community-foundation/
+        run: |
+          set -euo pipefail
+          BRANCH="${CASE##* }"   # drop the "01 " case number, keep the branch name
+          echo "Case: $CASE  ->  branch: $BRANCH"
+
+          git init -q work && cd work
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch -q --no-tags origin \
+            "+refs/heads/${BRANCH}:refs/remotes/origin/${BRANCH}" \
+            "+refs/heads/gh-pages:refs/remotes/origin/gh-pages"
+
+          SRC=$(git rev-parse "origin/${BRANCH}")
+          TREE=$(git rev-parse "origin/${BRANCH}:site")
+          PREV=$(git rev-parse origin/gh-pages)
+
+          if [ "$(git rev-parse "${PREV}^{tree}")" = "$TREE" ]; then
+            echo "This case is already live. Nothing to change."
+            {
+              echo "### ${BRANCH} is already live"
+              echo "Live website: ${SITE_URL}"
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          NEW=$(git commit-tree "$TREE" -p "$PREV" -m "Deploy ${BRANCH} (${SRC:0:7})")
+          [ "$(git rev-parse "${NEW}^{tree}")" = "$TREE" ]          # exact copy of the case's site/
+          git merge-base --is-ancestor "$PREV" "$NEW"                 # normal fast-forward, no force
+          git push -q origin "${NEW}:refs/heads/gh-pages"
+
+          echo "Published ${BRANCH} (${SRC:0:7}) as gh-pages ${NEW:0:7} (previous ${PREV:0:7})"
+          {
+            echo "### Published ${BRANCH}"
+            echo "- Branch commit: \`${SRC:0:7}\`"
+            echo "- gh-pages: \`${PREV:0:7}\` → \`${NEW:0:7}\`"
+            echo "- Live website: ${SITE_URL}"
+            echo ""
+            echo "GitHub Pages updates the site in about 1–2 minutes (watch the \"pages build and deployment\" run)."
+            echo "Reload pages with Ctrl+Shift+R (Cmd+Shift+R on Mac) if you still see the previous version."
+          } >> "$GITHUB_STEP_SUMMARY"
