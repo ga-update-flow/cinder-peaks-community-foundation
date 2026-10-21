@@ -1,19 +1,22 @@
-# Publishes ONE version (case) of the website to the live URL:
+# Deploy cases: publish any branch's version of the website to the live URL
 #   https://hufsa-stack.github.io/cinder-peaks-community-foundation/
 #
-# How to use: Actions tab -> "Deploy a case" -> Run workflow -> choose a case -> Run workflow.
+# How to use: Actions tab -> "Deploy cases" -> Run workflow -> choose a branch -> Run workflow.
+# For a branch that is not in the list (for example, one created later), choose
+# "Other branch (type its name below)" and type the exact branch name.
 #
 # What it does: creates a new commit on the gh-pages branch whose files are an exact copy
-# of the chosen branch's built website (its site/ folder), then pushes it as a normal
-# fast-forward. Nothing from the previously deployed case is kept, no branch is merged
-# or edited, and GitHub Pages settings and the URL are unchanged.
-name: Deploy a case
+# of the chosen branch's website (its site/ folder, or the branch itself if it already
+# holds a built site), then pushes it as a normal fast-forward. Nothing from the previously
+# deployed version is kept, no branch is merged or edited, and GitHub Pages settings and
+# the URL are unchanged.
+name: Deploy cases
 
 on:
   workflow_dispatch:
     inputs:
       case:
-        description: "Version to publish on the live website"
+        description: "Branch to publish on the live website"
         type: choice
         required: true
         options:
@@ -39,6 +42,13 @@ on:
           - clean-preview-spring-fall-eligibility
           - clean-preview-deadline-600-pm
           - clean-preview-history-arts-culture
+          - main
+          - gh-pages-v1-original
+          - Other branch (type its name below)
+      other_branch:
+        description: "Only if you chose 'Other branch': the exact branch name"
+        type: string
+        required: false
 
 permissions:
   contents: write
@@ -51,39 +61,52 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Publish the chosen case to gh-pages
+      - name: Publish the chosen branch to gh-pages
         env:
           CASE: ${{ inputs.case }}
+          OTHER: ${{ inputs.other_branch }}
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SITE_URL: https://hufsa-stack.github.io/cinder-peaks-community-foundation/
         run: |
           set -euo pipefail
-          BRANCH="${CASE##* }"   # drop the "01 " case number, keep the branch name
-          echo "Case: $CASE  ->  branch: $BRANCH"
+          fail() { echo "::error::$1"; { echo "### Not deployed"; echo "$1"; } >> "$GITHUB_STEP_SUMMARY"; exit 1; }
+
+          if [ "$CASE" = "Other branch (type its name below)" ]; then
+            BRANCH="$(echo "$OTHER" | xargs)"
+            [ -n "$BRANCH" ] || fail "You chose 'Other branch' but left the branch name empty."
+          else
+            BRANCH="${CASE##* }"   # drop the "01 " case number, keep the branch name
+          fi
+          git check-ref-format --branch "$BRANCH" >/dev/null 2>&1 || fail "'$BRANCH' is not a valid branch name."
+          [ "$BRANCH" != "gh-pages" ] || fail "gh-pages is the live website itself. Choose the branch you want to publish."
+          echo "Selected: $CASE  ->  branch: $BRANCH"
 
           git init -q work && cd work
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git remote add origin "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git fetch -q --no-tags origin \
-            "+refs/heads/${BRANCH}:refs/remotes/origin/${BRANCH}" \
-            "+refs/heads/gh-pages:refs/remotes/origin/gh-pages"
+          git fetch -q --no-tags origin "+refs/heads/gh-pages:refs/remotes/origin/gh-pages"
+          git fetch -q --no-tags origin "+refs/heads/${BRANCH}:refs/remotes/origin/${BRANCH}" 2>/dev/null \
+            || fail "Branch '$BRANCH' was not found in the repository. Check the spelling on the Branches page."
 
           SRC=$(git rev-parse "origin/${BRANCH}")
-          TREE=$(git rev-parse "origin/${BRANCH}:site")
+          if git rev-parse -q --verify "origin/${BRANCH}:site/index.html" >/dev/null; then
+            TREE=$(git rev-parse "origin/${BRANCH}:site")             # source branch: built site in site/
+          elif git rev-parse -q --verify "origin/${BRANCH}:index.html" >/dev/null; then
+            TREE=$(git rev-parse "origin/${BRANCH}^{tree}")           # branch that already holds a built site
+          else
+            fail "Branch '$BRANCH' has no website files (no site/index.html or index.html)."
+          fi
           PREV=$(git rev-parse origin/gh-pages)
 
           if [ "$(git rev-parse "${PREV}^{tree}")" = "$TREE" ]; then
-            echo "This case is already live. Nothing to change."
-            {
-              echo "### ${BRANCH} is already live"
-              echo "Live website: ${SITE_URL}"
-            } >> "$GITHUB_STEP_SUMMARY"
+            echo "This version is already live. Nothing to change."
+            { echo "### ${BRANCH} is already live"; echo "Live website: ${SITE_URL}"; } >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
 
           NEW=$(git commit-tree "$TREE" -p "$PREV" -m "Deploy ${BRANCH} (${SRC:0:7})")
-          [ "$(git rev-parse "${NEW}^{tree}")" = "$TREE" ]          # exact copy of the case's site/
+          [ "$(git rev-parse "${NEW}^{tree}")" = "$TREE" ]          # exact copy of the branch's website
           git merge-base --is-ancestor "$PREV" "$NEW"                 # normal fast-forward, no force
           git push -q origin "${NEW}:refs/heads/gh-pages"
 
